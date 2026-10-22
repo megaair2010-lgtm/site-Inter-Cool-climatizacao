@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Ao registrar o domínio próprio, troque inter-cool.vercel.app por ele -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://inter-cool.vercel.app/</loc><priority>1.0</priority></url>
+  <url><loc>https://inter-cool.vercel.app/servicos</loc><priority>0.8</priority></url>
+  <url><loc>https://inter-cool.vercel.app/servicos/instalacao</loc><priority>0.8</priority></url>
+  <url><loc>https://inter-cool.vercel.app/servicos/manutencao</loc><priority>0.8</priority></url>
+  <url><loc>https://inter-cool.vercel.app/servicos/higienizacao</loc><priority>0.8</priority></url>
+  <url><loc>https://inter-cool.vercel.app/servicos/pmoc</loc><priority>0.8</priority></url>
+  <url><loc>https://inter-cool.vercel.app/servicos/vrf</loc><priority>0.8</priority></url>
+  <url><loc>https://inter-cool.vercel.app/servicos/chiller</loc><priority>0.8</priority></url>
+  <url><loc>https://inter-cool.vercel.app/servicos/projetos</loc><priority>0.8</priority></url>
+  <url><loc>https://inter-cool.vercel.app/solucoes</loc><priority>0.6</priority></url>
+  <url><loc>https://inter-cool.vercel.app/projetos</loc><priority>0.6</priority></url>
+  <url><loc>https://inter-cool.vercel.app/sobre</loc><priority>0.6</priority></url>
+  <url><loc>https://inter-cool.vercel.app/faq</loc><priority>0.6</priority></url>
+  <url><loc>https://inter-cool.vercel.app/contato</loc><priority>0.6</priority></url>
+  <url><loc>https://inter-cool.vercel.app/orcamento</loc><priority>0.8</priority></url>
+  <url><loc>https://inter-cool.vercel.app/politica-de-privacidade</loc><priority>0.6</priority></url>
+</urlset>

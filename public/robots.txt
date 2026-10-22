@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://inter-cool.vercel.app/sitemap.xml
