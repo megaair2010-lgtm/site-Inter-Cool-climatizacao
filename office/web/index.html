@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#071634" />
+    <title>Escritório Inter-Cool</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  </head>
+  <body>
+    <div id="demo-banner" hidden>DADOS SIMULADOS — fonte de demonstração, não representa trabalho real</div>
+    <header class="top">
+      <div class="brand"><img src="/favicon.svg" alt="" /><div><b>INTER-COOL</b><span>Escritório de IA</span></div></div>
+      <div class="metrics" id="metrics"></div>
+      <div class="tools">
+        <input id="search" type="search" placeholder="Buscar agente" autocomplete="off" />
+        <select id="dept" aria-label="Departamento"><option value="">Todos os departamentos</option></select>
+        <div class="seg" id="views" role="tablist">
+          <button data-view="3d" role="tab">3D</button>
+          <button data-view="2d" role="tab">2D</button>
+          <button data-view="list" role="tab">Lista</button>
+          <button data-view="kanban" role="tab">Kanban</button>
+        </div>
+        <span class="conn" id="conn" title="Conexão em tempo real"></span>
+      </div>
+    </header>
+    <main class="layout">
+      <section class="stage" id="stage">
+        <div id="view3d" class="view"></div>
+        <div id="view2d" class="view"></div>
+        <div id="viewlist" class="view"></div>
+        <div id="viewkanban" class="view"></div>
+        <div class="cam" id="cam">
+          <button data-cam="in" title="Aproximar">＋</button>
+          <button data-cam="out" title="Afastar">－</button>
+          <button data-cam="left" title="Girar à esquerda">⟲</button>
+          <button data-cam="right" title="Girar à direita">⟳</button>
+          <button data-cam="home" title="Visão geral">⌂</button>
+        </div>
+        <div class="state-msg" id="state-msg" hidden></div>
+        <div class="search-results" id="search-results" hidden></div>
+      </section>
+      <aside class="side" id="side">
+        <div class="side-tabs">
+          <button data-tab="activity" class="on">Atividade</button>
+          <button data-tab="queue">Fila</button>
+          <button data-tab="alerts">Alertas <span id="alert-count"></span></button>
+        </div>
+        <div id="tab-activity" class="tab feed"></div>
+        <div id="tab-queue" class="tab" hidden></div>
+        <div id="tab-alerts" class="tab" hidden></div>
+      </aside>
+      <aside class="panel" id="panel" hidden></aside>
+    </main>
+    <dialog id="modal"></dialog>
+    <dialog id="login">
+      <form method="dialog" id="login-form">
+        <h2>Escritório Inter-Cool</h2>
+        <p>Informe seu token de acesso.</p>
+        <input id="token" type="password" autocomplete="current-password" required minlength="16" />
+        <button>Entrar</button>
+        <small id="login-err"></small>
+      </form>
+    </dialog>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
