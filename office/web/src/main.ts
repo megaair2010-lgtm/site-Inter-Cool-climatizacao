@@ -4,9 +4,10 @@ import type { AgentDetail, DepartmentId, OfficeAgent, OfficeEvent, OfficeTask } 
 import { STATE_META, TASK_META, ago, esc } from './meta'
 import { store } from './store'
 import { renderKanban, renderList, renderPlan } from './view2d'
+import { PixelOffice } from './viewPixel'
 import type { Office3D } from './scene3d'
 
-type View = '3d' | '2d' | 'list' | 'kanban'
+type View = '3d' | '2d' | 'list' | 'kanban' | 'pixel'
 
 const $ = <T extends HTMLElement = HTMLElement>(sel: string) => document.querySelector(sel) as T
 const ui = {
@@ -26,6 +27,7 @@ const ui = {
 
 let view: View = initialView()
 let office: Office3D | null = null
+let pixelOffice: PixelOffice | null = null
 let loading3d: Promise<void> | null = null
 let filter: DepartmentId | null = null
 let selected: string | null = null
@@ -68,13 +70,20 @@ async function setView(v: View) {
     /* ok */
   }
   for (const b of ui.views.querySelectorAll('button')) b.classList.toggle('on', b.dataset.view === v)
-  for (const id of ['3d', '2d', 'list', 'kanban']) $(`#view${id}`).hidden = id !== v
+  for (const id of ['3d', '2d', 'list', 'kanban', 'pixel']) $(`#view${id}`).hidden = id !== v
   ui.cam.hidden = v !== '3d'
   if (v === '3d') {
     await ensure3d()
     office?.start()
   } else office?.stop()
+  if (v === 'pixel') ensurePixel()
   render()
+}
+
+function ensurePixel() {
+  if (pixelOffice) return
+  pixelOffice = new PixelOffice($('#viewpixel'))
+  pixelOffice.onSelect = (k) => (k ? openAgent(k) : closePanel())
 }
 
 function ensure3d(): Promise<void> {
@@ -110,6 +119,7 @@ function render() {
   if (view === '3d') office?.update(agents)
   else if (view === '2d') renderPlan($('#view2d'), agents, filter, selected)
   else if (view === 'list') renderList($('#viewlist'), filter ? agents.filter((a) => a.department === filter) : agents, store.tasks)
+  else if (view === 'pixel') pixelOffice?.update(filter ? agents.filter((a) => a.department === filter) : agents, selected)
   else renderKanban($('#viewkanban'), [...store.tasks.values()].filter((t) => !filter || t.assignees.some((k) => store.agents.get(k)?.department === filter)), store.agents)
 
   renderSide()

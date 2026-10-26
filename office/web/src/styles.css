@@ -90,6 +90,8 @@ body.panel-open .side { display: none; }
 .view { position: absolute; inset: 0; overflow: auto; }
 #view3d { overflow: hidden; }
 #view3d canvas { display: block; }
+#viewpixel { overflow: hidden; background: #0b1a3a; }
+#viewpixel canvas.pixel-canvas { display: block; width: 100%; height: 100%; image-rendering: pixelated; cursor: pointer; }
 .labels-layer { position: absolute; inset: 0; }
 .state-msg {
   position: absolute; left: 50%; top: 40%; transform: translate(-50%, -50%);
