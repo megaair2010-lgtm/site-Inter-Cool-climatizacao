@@ -69,12 +69,14 @@ export const SERVICES: Service[] = [
 ];
 
 export const SEGMENTS: Segment[] = [
-  { id: "g1", title: "Residencial", text: "Conforto e eficiência para sua casa.", icon: "home" },
+  { id: "g1", title: "Residencial", text: "Conforto e eficiência para sua casa, inclusive em Alphaville, Barueri e Santana de Parnaíba.", icon: "home" },
   { id: "g2", title: "Comercial", text: "Soluções de climatização para lojas, escritórios e empresas.", icon: "store" },
   { id: "g3", title: "Industrial", text: "Projetos e manutenção para ambientes industriais.", icon: "factory" },
   { id: "g4", title: "Clínicas e Consultórios", text: "Climatização adequada para ambientes que exigem maior controle.", icon: "clinic" },
   { id: "g5", title: "Restaurantes", text: "Conforto térmico para clientes e equipes.", icon: "food" },
   { id: "g6", title: "Condomínios", text: "Manutenção e soluções para sistemas de climatização.", icon: "building" },
+  { id: "g7", title: "Supermercados e Varejo", text: "Câmara fria e ar-condicionado da loja com o mesmo time técnico.", icon: "store" },
+  { id: "g8", title: "Órgãos Públicos", text: "Fornecimento e instalação via pregão para prefeituras, escolas e unidades de saúde.", icon: "shield" },
 ];
 
 export const DIFFERENTIALS = [
@@ -131,6 +133,9 @@ export const TESTIMONIALS: Testimonial[] = [
 
 /** Respostas sugeridas — revise antes de publicar (needsReview) */
 export const FAQ: FaqItem[] = [
+  { id: "f11", question: "Vocês fazem manutenção de câmara fria?", answer: "Sim. Instalamos e mantemos câmaras frias de resfriados e congelados para supermercados, açougues, padarias, hortifrútis e restaurantes, junto com o ar-condicionado da loja.", needsReview: false },
+  { id: "f12", question: "Vocês atendem prefeituras e órgãos públicos?", answer: "Sim. Participamos de pregões eletrônicos para fornecimento, instalação e manutenção de ar-condicionado em prédios públicos do estado de São Paulo.", needsReview: false },
+  { id: "f13", question: "Atendem Alphaville, Barueri e Santana de Parnaíba?", answer: "Sim. Fazemos instalação, higienização e manutenção residencial e comercial na região. Peça sua visita técnica pelo WhatsApp.", needsReview: false },
   { id: "f1", question: "Vocês fazem instalação de ar-condicionado?", answer: "Sim. Instalamos Split, Multi Split, Cassete (K7), Piso-Teto, Self Contained e sistemas dutados, com gás R-410A ou R-32 e avaliação do local antes do serviço.", needsReview: false },
   { id: "f2", question: "Vocês trabalham com manutenção preventiva?", answer: "Sim. Montamos um plano de manutenção de acordo com o tipo de equipamento e a frequência de uso.", needsReview: false },
   { id: "f3", question: "Vocês fazem higienização?", answer: "Sim. Fazemos a limpeza técnica de filtros, turbinas, serpentinas, bandejas e drenos.", needsReview: false },

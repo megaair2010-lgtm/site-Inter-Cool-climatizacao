@@ -3,6 +3,8 @@ import { Icon } from "../ui";
 /** Faixa em movimento com as especialidades (somente serviços que a empresa executa; ver data/content.ts) */
 const ITEMS = [
   "Sistemas VRF",
+  "Câmaras frias",
+  "Órgãos públicos e licitações",
   "Dutos e Self Contained",
   "Multisplit",
   "Expansão direta",

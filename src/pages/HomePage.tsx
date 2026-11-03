@@ -7,6 +7,7 @@ import { ServiceTicker } from "../components/sections/ServiceTicker";
 import { FaqSection } from "../components/sections/FaqSection";
 import { HeroVideo } from "../components/sections/HeroVideo";
 import { HowItWorks } from "../components/sections/HowItWorks";
+import { PromoVideo } from "../components/sections/PromoVideo";
 import { Process } from "../components/sections/Process";
 import { QuoteSection } from "../components/sections/QuoteForm";
 import { Segments } from "../components/sections/Segments";
@@ -32,6 +33,7 @@ export function HomePage() {
     <>
       <HeroVideo />
       <ServiceTicker />
+      <PromoVideo />
       <FactsBar />
       <AboutBlock />
       <Solutions />

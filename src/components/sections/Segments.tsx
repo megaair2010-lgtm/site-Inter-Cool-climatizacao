@@ -7,7 +7,7 @@ import { cx } from "../../lib/site-helpers";
 
 /** Foto de cada segmento (fotos da empresa; recortes de apresentação ficam com selo "ilustrativa") */
 const PHOTO: Record<string, string> = {
-  g1: "hiWall", g2: "vrfCobertura", g3: "chiller", g4: "dutoForro", g5: "rack", g6: "cassete",
+  g1: "hiWall", g2: "vrfCobertura", g3: "chiller", g4: "dutoForro", g5: "rack", g6: "cassete", g7: "rack", g8: "pisoTeto",
 };
 
 function SegPhoto({ id, on }: { id: string; on: boolean }) {
