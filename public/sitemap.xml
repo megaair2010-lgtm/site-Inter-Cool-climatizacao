@@ -10,8 +10,6 @@
   <url><loc>https://inter-cool.vercel.app/servicos/vrf</loc><priority>0.8</priority></url>
   <url><loc>https://inter-cool.vercel.app/servicos/chiller</loc><priority>0.8</priority></url>
   <url><loc>https://inter-cool.vercel.app/servicos/projetos</loc><priority>0.8</priority></url>
-  <url><loc>https://inter-cool.vercel.app/servicos/camara-fria</loc><priority>0.8</priority></url>
-  <url><loc>https://inter-cool.vercel.app/servicos/orgaos-publicos</loc><priority>0.8</priority></url>
   <url><loc>https://inter-cool.vercel.app/solucoes</loc><priority>0.6</priority></url>
   <url><loc>https://inter-cool.vercel.app/projetos</loc><priority>0.6</priority></url>
   <url><loc>https://inter-cool.vercel.app/sobre</loc><priority>0.6</priority></url>
