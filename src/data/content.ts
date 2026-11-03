@@ -66,6 +66,18 @@ export const SERVICES: Service[] = [
     description: "Do levantamento técnico ao projeto executivo: cálculo de carga térmica, definição do sistema (Split, VRF, Self Contained, água gelada), rede de dutos e acompanhamento da execução.",
     bullets: ["Levantamento e cálculo de carga térmica", "Definição do sistema e dos equipamentos", "Projeto de dutos, grelhas e difusores", "Acompanhamento da instalação"],
   },
+  {
+    id: "s9", slug: "camara-fria", title: "Câmaras Frias e Refrigeração Comercial", icon: "snow", hasPage: true, order: 9, active: true, image: IMG.condensadoras, art: "condensadora",
+    short: "Instalação e manutenção de câmaras frias para supermercados, açougues, padarias, hortifrútis e restaurantes.",
+    description: "Cuidamos da câmara fria e do ar-condicionado da loja no mesmo atendimento: resfriados e congelados, unidades condensadoras, evaporadores e controle de temperatura, com manutenção programada para evitar perda de mercadoria.",
+    bullets: ["Câmaras de resfriados e congelados", "Manutenção preventiva e corretiva", "Verificação de gás, vedação e degelo", "Ar-condicionado da loja e da câmara no mesmo contrato"],
+  },
+  {
+    id: "s10", slug: "orgaos-publicos", title: "Órgãos Públicos e Licitações", icon: "building", hasPage: true, order: 10, active: true, image: IMG.pisoTeto, art: "k7",
+    short: "Fornecimento, instalação e manutenção de ar-condicionado para prefeituras e órgãos públicos, via pregão eletrônico.",
+    description: "Participamos de pregões eletrônicos para fornecimento de equipamentos, instalação completa e contratos de manutenção e PMOC em escolas, unidades de saúde, centros culturais e prédios públicos do estado de São Paulo.",
+    bullets: ["Fornecimento de equipamentos conforme o edital", "Instalação com material e mão de obra", "Garantia e manutenção pós-entrega", "Contratos de manutenção e PMOC"],
+  },
 ];
 
 export const SEGMENTS: Segment[] = [
@@ -75,6 +87,8 @@ export const SEGMENTS: Segment[] = [
   { id: "g4", title: "Clínicas e Consultórios", text: "Climatização adequada para ambientes que exigem maior controle.", icon: "clinic" },
   { id: "g5", title: "Restaurantes", text: "Conforto térmico para clientes e equipes.", icon: "food" },
   { id: "g6", title: "Condomínios", text: "Manutenção e soluções para sistemas de climatização.", icon: "building" },
+  { id: "g7", title: "Supermercados e Varejo", text: "Câmara fria e ar-condicionado da loja com o mesmo time técnico.", icon: "store" },
+  { id: "g8", title: "Órgãos Públicos", text: "Fornecimento e instalação via pregão para prefeituras, escolas e unidades de saúde.", icon: "shield" },
 ];
 
 export const DIFFERENTIALS = [
@@ -140,5 +154,8 @@ export const FAQ: FaqItem[] = [
   { id: "f7", question: "Quais regiões vocês atendem?", answer: `Atendemos ${SITE.COMPANY_REGION}: capital, Grande São Paulo, interior e litoral.`, needsReview: false },
   { id: "f8", question: "Qual o prazo para atendimento?", answer: "Respondemos as solicitações em horário comercial (segunda a sexta, das 8h25 às 17h30). O prazo de execução é informado no orçamento, de acordo com o tipo de serviço.", needsReview: false },
   { id: "f9", question: "Existe garantia?", answer: "Sim. As condições de garantia de cada serviço são informadas por escrito no orçamento.", needsReview: false },
+  { id: "f11", question: "Vocês fazem manutenção de câmara fria?", answer: "Sim. Instalamos e mantemos câmaras frias de resfriados e congelados para supermercados, açougues, padarias, hortifrútis e restaurantes, junto com o ar-condicionado da loja.", needsReview: false },
+  { id: "f12", question: "Vocês atendem prefeituras e órgãos públicos?", answer: "Sim. Participamos de pregões eletrônicos para fornecimento, instalação e manutenção de ar-condicionado em prédios públicos do estado de São Paulo.", needsReview: false },
+  { id: "f13", question: "Atendem Alphaville, Barueri e Santana de Parnaíba?", answer: "Sim. Fazemos instalação, higienização e manutenção residencial e comercial na região. Peça sua visita técnica pelo WhatsApp.", needsReview: false },
   { id: "f10", question: "Quais marcas vocês atendem?", answer: "Atendemos as principais marcas do mercado. Consulte disponibilidade e compatibilidade para o seu equipamento.", needsReview: false },
 ];

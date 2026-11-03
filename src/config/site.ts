@@ -26,9 +26,9 @@ export const SITE = {
   COMPANY_CITY: "São Paulo",
   COMPANY_STATE: "SP",
   COMPANY_REGION: "todo o estado de São Paulo",
-  SERVICE_AREAS: ["Capital", "Grande São Paulo", "ABC Paulista", "Interior de SP", "Litoral de SP"] as string[],
+  SERVICE_AREAS: ["Capital", "Grande São Paulo", "Alphaville, Barueri e Santana de Parnaíba", "ABC Paulista", "Interior de SP", "Litoral de SP"] as string[],
 
-  INSTAGRAM_URL: "",
+  INSTAGRAM_URL: "https://www.instagram.com/intercoolclimatizacaohvac/",
   FACEBOOK_URL: "",
   LINKEDIN_URL: "",
   GOOGLE_MAPS_URL: "https://www.google.com/maps/search/?api=1&query=Estado+de+S%C3%A3o+Paulo",
