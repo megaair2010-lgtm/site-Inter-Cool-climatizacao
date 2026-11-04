@@ -1,0 +1,66 @@
+{
+  "quando": "2026-10-24T18:45:45.017Z",
+  "ruflo": "/tmp/claude-0/ruflo/node_modules/ruflo/bin/ruflo.js",
+  "resultados": [
+    {
+      "criterio": "1. O escritório abre no navegador",
+      "ok": true,
+      "evidencia": "GET / → 3143 bytes de HTML; modo=real; fonte ruflo ok=true"
+    },
+    {
+      "criterio": "2. Agentes reais aparecem em suas mesas",
+      "ok": true,
+      "evidencia": "ic-ceo→executive-ceo (executive); ic-gm→management-gm (management); ic-dir-comercial→commercial-dir (commercial); ic-sdr→commercial-2 (commercial); ic-propostas→commercial-1 (commercial); ic-dir-mkt→marketing-dir (marketing); ic-seo→seo-1 (seo); ic-dir-fin→finance-dir (finance); ic-margens→finance-1 (finance)"
+    },
+    {
+      "criterio": "10. Nunca afirma trabalho sem atividade registrada",
+      "ok": true,
+      "evidencia": "Todos ociosos sem tarefas. Ruflo marca \"Analista de margens\" como busy; escritório mostra \"idle\" com evidência: Nenhuma tarefa ativa registrada (a fonte marca o agente como \"busy\", mas não há tarefa registrada; não exibido como trabalhando)"
+    },
+    {
+      "criterio": "4. Uma nova tarefa aparece no escritório",
+      "ok": true,
+      "evidencia": "POST order_ceo → 200; Ruflo task_status(task-1792867507732-zo68jw) assignedTo=ic-ceo tags=origin:office,requested-by:jhow; SSE recebeu task.received"
+    },
+    {
+      "criterio": "3. O estado visual muda quando o estado real muda",
+      "ok": true,
+      "evidencia": "task_update(task-1792867507732-zo68jw, in_progress) → CEO \"proposal\" (Tarefa task-1792867507732-zo68jw com status \"in_progress\" na fonte ruflo); evento agent.state recebido por SSE"
+    },
+    {
+      "criterio": "5. Delegação real CEO → gerente → especialistas",
+      "ok": true,
+      "evidencia": "Eventos task.delegated: ic-ceo→ic-gm, ic-dir-comercial→ic-propostas, ic-dir-comercial→ic-sdr, ic-gm→ic-margens, ic-gm→ic-dir-comercial; árvore: task-1792867507732-zo68jw → task-1792867508564-kutyht → task-1792867509352-c6k3m8 → task-1792867509369-0c4xk6"
+    },
+    {
+      "criterio": "6. Clicar em um agente mostra tarefa e resultado",
+      "ok": true,
+      "evidencia": "Painel do SDR: resultado=\"{ \"resumo\": \"3 construtoras com obras ativas encontradas (dados públicos)\", \"fontes\": [ \"r…\", 6 eventos no histórico. Painel do preparador: tarefa atual=\"Preparar proposta de contrato de manutenção preventiva\" 15%"
+    },
+    {
+      "criterio": "7. Erros e bloqueios aparecem corretamente",
+      "ok": true,
+      "evidencia": "Preparador=blocked (\"Falta tabela de preços de contratos vigente\"); Analista=error (\"Base de custos não configurada\"); SEO=awaiting_approval; alertas=3"
+    },
+    {
+      "criterio": "Extra. Aprovação pelo painel grava no Ruflo",
+      "ok": true,
+      "evidencia": "POST approve_task → 200; Ruflo result={\"officeState\":\"approved\",\"approvedBy\":\"jhow\",\"note\":\"Aprovado\",\"at\":\"2026-10-24T18:45:36.305Z\"}"
+    },
+    {
+      "criterio": "8. A tela recupera o estado após reconexão",
+      "ok": true,
+      "evidencia": "Desconectado no evento 55; ao reconectar com since=55: snapshot completo + 3 eventos perdidos reenviados (task.completed, agent.removed…)"
+    },
+    {
+      "criterio": "9. O modo 2D continua disponível",
+      "ok": true,
+      "evidencia": "Planta 2D com agentes=true, Kanban com cartões=true, Lista com linhas=true (dados reais do Ruflo)"
+    },
+    {
+      "criterio": "Segurança: autenticação, papéis e lista de comandos",
+      "ok": true,
+      "evidencia": "sem token→401; visitante enviando ordem→403; comando arbitrário→400; visitante lendo auditoria→403"
+    }
+  ]
+}
