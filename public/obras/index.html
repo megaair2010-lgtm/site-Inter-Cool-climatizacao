@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Inter-Cool para obras e empresas</title>
+<meta name="description" content="Climatização para construtoras, arquitetos, gerenciadoras e condomínios em São Paulo: instalação, VRF, dutos, cassete, chillers, PMOC e projetos HVAC.">
+<meta property="og:title" content="Inter-Cool Climatização · Obras e empresas em SP">
+<meta property="og:description" content="Instalação, VRF, dutos, PMOC e projetos HVAC. Mande seu projeto pelo WhatsApp.">
+<meta property="og:image" content="/images/campo/vrf-cobertura.webp">
+<link rel="icon" href="/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Lora:ital,wght@1,500;1,600&display=swap">
+<style>
+/* Layout: dark hero with live airflow canvas over a real rooftop VRF photo; light working sections below; form ends in WhatsApp */
+:root{
+  --ink:#071634; --steel:#0F2752; --cold:#5CC3DD; --frost:#EAF4F8; --paper:#F7FAFC; --line:#D3DEEA; --muted:#4D5E7A;
+  --wa:#1FAF57; --wa-ink:#05361A;
+  --display:'Lora',Georgia,serif; --text:'IBM Plex Sans',system-ui,-apple-system,Segoe UI,Arial,sans-serif;
+  --gut:max(20px,env(safe-area-inset-left,0px));
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.6 var(--text);-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{max-width:1160px;margin:0 auto;padding-left:var(--gut);padding-right:max(20px,env(safe-area-inset-right,0px))}
+:focus-visible{outline:3px solid var(--cold);outline-offset:3px;border-radius:4px}
+
+/* Top bar */
+.bar{position:absolute;inset:0 0 auto;z-index:3;padding-top:env(safe-area-inset-top,0px)}
+.bar .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:18px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:#fff}
+.brand img{width:44px;height:44px;border-radius:10px}
+.brand b{font:italic 600 24px/1 var(--display)}
+.brand span{display:block;font-size:13px;color:var(--cold);letter-spacing:.02em;margin-top:3px}
+.wa-mini{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);color:#fff;text-decoration:none;font-weight:600;font-size:15px;padding:9px 14px;border-radius:999px;backdrop-filter:blur(6px)}
+
+/* Hero */
+.hero{position:relative;background:var(--ink);color:#fff;overflow:hidden;padding-top:calc(110px + env(safe-area-inset-top,0px));padding-bottom:72px}
+.hero-photo{position:absolute;inset:0;background:url("/images/campo/vrf-cobertura.webp") 70% 40%/cover no-repeat;opacity:.55}
+.hero-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,var(--ink) 18%,rgba(7,22,52,.7) 52%,rgba(7,22,52,.15) 100%)}
+#air{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:48px;align-items:center}
+.hero h1{font:italic 500 clamp(40px,6.2vw,76px)/1.04 var(--display);margin:0 0 22px;letter-spacing:-.01em;text-wrap:balance}
+.hero p.lead{font-size:clamp(18px,1.6vw,21px);color:#D4E1F2;max-width:34em;margin:0 0 30px}
+.ctas{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font:600 17px/1 var(--text);padding:16px 22px;border-radius:12px;text-decoration:none;border:0;cursor:pointer}
+.btn-wa{background:var(--wa);color:#fff}
+.btn-wa:hover{background:#18994B}
+.btn-ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.4)}
+.btn-ghost:hover{border-color:#fff}
+.facts{list-style:none;margin:0;padding:22px 24px;background:rgba(15,39,82,.72);border:1px solid rgba(92,195,221,.35);border-radius:14px;backdrop-filter:blur(8px);display:grid;gap:14px}
+.facts li{display:grid;grid-template-columns:28px 1fr;gap:10px;font-size:16px;color:#E3ECF7}
+.facts svg{width:22px;height:22px;color:var(--cold);margin-top:2px}
+
+/* Segments */
+section{padding-block:88px}
+.sec-title{font:italic 500 clamp(32px,4vw,48px)/1.1 var(--display);margin:0 0 14px;text-wrap:balance}
+.sec-lead{color:var(--muted);max-width:40em;margin:0 0 36px}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:28px}
+.tab{font:600 16px var(--text);padding:11px 18px;border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--ink);cursor:pointer}
+.tab[aria-selected="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.panel{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;align-items:center}
+.panel img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:16px}
+.panel h3{font:600 26px/1.25 var(--text);margin:0 0 12px}
+.panel p{margin:0 0 18px;color:var(--muted)}
+.panel ul{margin:0 0 24px;padding-left:20px;display:grid;gap:6px}
+.panel .ask{font-weight:600;color:var(--ink)}
+.swap{animation:swap .35s ease}
+@keyframes swap{from{opacity:.0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+/* Work strip */
+.work{background:var(--frost)}
+.strip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.strip figure{margin:0}
+.strip img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:12px}
+.strip figcaption{font-size:15px;color:var(--muted);margin-top:8px}
+
+/* Steps (real sequence) */
+.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px;counter-reset:s;list-style:none;margin:0;padding:0}
+.steps li{counter-increment:s;border-top:2px solid var(--ink);padding-top:18px}
+.steps li::before{content:counter(s);font:italic 600 34px/1 var(--display);color:var(--steel);display:block;margin-bottom:10px}
+.steps b{display:block;font-size:19px;margin-bottom:4px}
+.steps span{color:var(--muted);font-size:16px}
+
+/* Form */
+.form-sec{background:var(--ink);color:#fff}
+.form-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:56px;align-items:start}
+.form-sec .sec-lead{color:#C7D6EA}
+.contact-alt{display:grid;gap:10px;margin-top:22px;font-size:16px;color:#C7D6EA}
+.contact-alt strong{color:#fff;font-weight:600}
+form{background:var(--steel);border:1px solid rgba(92,195,221,.3);border-radius:16px;padding:28px;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.f{display:grid;gap:6px;min-width:0}
+.f.full{grid-column:1/-1}
+label{font-size:15px;font-weight:500;color:#DCE7F5}
+input,select,textarea{font:inherit;font-size:16px;color:var(--ink);background:#fff;border:1px solid transparent;border-radius:10px;padding:12px 14px;width:100%}
+textarea{min-height:96px;resize:vertical}
+input:focus,select:focus,textarea:focus{outline:3px solid var(--cold);outline-offset:1px}
+.consent{grid-column:1/-1;display:flex;gap:10px;align-items:flex-start;font-size:14px;color:#C7D6EA}
+.consent input{width:18px;height:18px;margin-top:3px;flex:none}
+.form-actions{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.form-actions .btn{flex:1 1 220px}
+.btn-mail{background:#fff;color:var(--ink)}
+.msg{grid-column:1/-1;font-size:15px;min-height:1.4em;color:var(--cold)}
+.err{color:#FFB4A8}
+
+
+/* Quote card (2-step form in hero) */
+.qstep[hidden]{display:none}
+form.qcard{grid-template-columns:minmax(0,1fr);border:0}
+.qcard{background:var(--paper);color:var(--ink);border-radius:18px;padding:24px;display:grid;gap:14px;box-shadow:0 24px 60px rgba(0,0,0,.35)}
+.qhead{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.qhead b{font-size:19px}
+.qhead span{font-size:14px;color:var(--muted)}
+.qbar{height:4px;background:var(--line);border-radius:2px;overflow:hidden}
+.qbar i{display:block;height:100%;width:50%;background:var(--cold);transition:width .35s ease}
+.qstep{border:0;margin:0;padding:0;display:grid;gap:12px;min-width:0}
+.qstep legend{font:600 17px var(--text);margin-bottom:6px;padding:0}
+.choices{display:grid;gap:10px}
+.choice{position:relative;display:block;cursor:pointer}
+.choice input{position:absolute;opacity:0;inset:0}
+.choice span{display:block;padding:15px 16px;border:1.5px solid var(--line);border-radius:12px;font-weight:600;background:#fff;transition:border-color .15s,background .15s}
+.choice:hover span{border-color:var(--steel)}
+.choice input:focus-visible+span{outline:3px solid var(--cold);outline-offset:2px}
+.choice input:checked+span{border-color:var(--ink);background:var(--frost)}
+.qcard label{color:var(--ink)}
+.qcard input:not([type=radio]):not([type=checkbox]){border:1px solid var(--line)}
+.qcard small{color:var(--muted);font-weight:400}
+.qcard .consent{color:var(--muted)}
+.wide{width:100%}
+.qalt{display:flex;justify-content:space-between;gap:12px}
+.linkbtn{background:none;border:0;color:var(--steel);font:500 15px var(--text);text-decoration:underline;cursor:pointer;padding:4px 0}
+.qnote{margin:0;font-size:13px;color:var(--muted)}
+.qcard .msg{color:var(--steel)}
+.qcard .msg.err{color:#B3261E}
+.step-in{animation:swap .35s ease}
+.trust{background:var(--steel);color:#D9E5F4;font-size:15px}
+.trust .wrap{display:flex;flex-wrap:wrap;gap:10px 28px;padding-block:16px}
+.trust b{color:#fff;font-weight:600}
+.season{background:var(--frost)}
+.season-grid{display:flex;flex-wrap:wrap;gap:24px;align-items:center;justify-content:space-between}
+.season .sec-lead{margin-bottom:0}
+.btn.big{font-size:19px;padding:20px 28px}
+.faq{max-width:820px}
+.faq details{border-top:1px solid var(--line);padding:18px 0}
+.faq details:last-child{border-bottom:1px solid var(--line)}
+.faq summary{font-weight:600;font-size:19px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px}
+.faq summary::after{content:"+";font-size:24px;line-height:1;color:var(--steel)}
+.faq details[open] summary::after{content:"–"}
+.faq p{color:var(--muted);margin:10px 0 0}
+.contact-end{display:flex;flex-wrap:wrap;gap:32px;align-items:center;justify-content:space-between}
+.mbar{display:none}
+@media (max-width:900px){
+  .mbar{display:grid;grid-template-columns:1fr 1.4fr;gap:10px;position:fixed;left:0;right:0;bottom:0;z-index:9;background:rgba(7,22,52,.96);padding:10px max(14px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(14px,env(safe-area-inset-left,0px))}
+  .mbar a{display:flex;align-items:center;justify-content:center;min-height:50px;border-radius:12px;font-weight:600;text-decoration:none;color:#fff;border:1px solid rgba(255,255,255,.35)}
+  .mbar a.go{background:var(--wa);border-color:var(--wa)}
+  body{padding-bottom:84px}
+}
+footer{background:#04102A;color:#9FB2CF;font-size:14px;padding-block:28px calc(28px + env(safe-area-inset-bottom,0px))}
+footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
+
+.float-wa{position:fixed;right:max(18px,env(safe-area-inset-right,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:9;width:60px;height:60px;border-radius:50%;background:var(--wa);display:grid;place-items:center;box-shadow:0 10px 28px rgba(5,54,26,.35)}
+.float-wa svg{width:30px;height:30px;color:#fff}
+
+@media (max-width:900px){
+  .hero .wrap,.panel,.form-grid{grid-template-columns:minmax(0,1fr)}
+  .strip{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .steps{grid-template-columns:repeat(2,minmax(0,1fr))}
+  section{padding-block:64px}
+}
+@media (max-width:560px){
+  .hero .ctas .btn-ghost[href='#segmentos']{display:none}
+  form.qcard{padding:20px}
+  form{grid-template-columns:1fr;padding:20px}
+  .steps{grid-template-columns:1fr}
+  .wa-mini span{display:none}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.swap{animation:none}}
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <div class="wrap">
+    <a class="brand" href="#topo" aria-label="Inter-Cool Climatização">
+      <img src="/logo-intercool-icone.webp" alt="" width="44" height="44">
+      <div><b>Inter-Cool</b><span>Climatização HVAC</span></div>
+    </a>
+    <a class="wa-mini" href="https://wa.me/5511977990182?text=Ol%C3%A1%2C%20vim%20pela%20p%C3%A1gina%20de%20obras%20e%20empresas." target="_blank" rel="noopener">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.7a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3Z"/></svg>
+      <span>(11) 97799-0182</span>
+    </a>
+  </div>
+</header>
+
+<main id="topo">
+  <section class="hero" aria-labelledby="h1">
+    <div class="hero-photo" role="img" aria-label="Condensadoras de sistema VRF instaladas pela Inter-Cool na cobertura de um edifício em São Paulo"></div>
+    <canvas id="air" aria-hidden="true"></canvas>
+    <div class="wrap">
+      <div>
+        <h1 id="h1">Ar-condicionado da sua obra entregue no cronograma, do projeto ao PMOC.</h1>
+        <p class="lead">Instalamos e mantemos VRF, Self Contained, chillers, cassetes e redes de dutos para construtoras, escritórios de arquitetura, gerenciadoras e condomínios em todo o estado de São Paulo.</p>
+        <div class="ctas">
+          <a class="btn btn-ghost" href="tel:+5511977990182">Ligar (11) 97799-0182</a>
+          <a class="btn btn-ghost" href="#segmentos">Ver como atendemos</a>
+        </div>
+      </div>
+      <form class="qcard" id="lead" novalidate aria-labelledby="q-title">
+        <div class="qhead"><b id="q-title">Orçamento para obra ou empresa</b><span id="q-step">Etapa 1 de 2</span></div>
+        <div class="qbar"><i id="q-prog"></i></div>
+        <fieldset class="qstep" id="s1">
+          <legend>Que tipo de empresa é a sua?</legend>
+          <div class="choices">
+            <label class="choice"><input type="radio" name="tipo" value="Construtora"><span>Construtora ou incorporadora</span></label>
+            <label class="choice"><input type="radio" name="tipo" value="Escritório de arquitetura"><span>Escritório de arquitetura</span></label>
+            <label class="choice"><input type="radio" name="tipo" value="Engenharia / fit-out"><span>Engenharia ou fit-out</span></label>
+            <label class="choice"><input type="radio" name="tipo" value="Condomínio / facilities"><span>Condomínio ou facilities</span></label>
+          </div>
+        </fieldset>
+        <fieldset class="qstep" id="s2" hidden>
+          <legend>Para quem enviamos a proposta?</legend>
+          <div class="f"><label for="nome">Seu nome</label><input id="nome" autocomplete="name" maxlength="80" required></div>
+          <div class="f"><label for="empresa">Empresa</label><input id="empresa" autocomplete="organization" maxlength="100" required></div>
+          <div class="f"><label for="detalhes">O que precisa <small>(opcional)</small></label><input id="detalhes" maxlength="300" placeholder="Ex.: VRF em 12 pavimentos, entrega em junho"></div>
+          <label class="consent" for="ok"><input type="checkbox" id="ok" checked> Autorizo o contato da Inter-Cool sobre este pedido.</label>
+          <button class="btn btn-wa wide" type="submit">Receber proposta no WhatsApp</button>
+          <div class="qalt"><button type="button" class="linkbtn" id="back">Voltar</button><button type="button" class="linkbtn" id="send-mail">Prefiro por e-mail</button></div>
+        </fieldset>
+        <p class="msg" id="msg" role="status" aria-live="polite"></p>
+        <p class="qnote">Resposta em horário comercial. Proposta por escrito antes de qualquer execução.</p>
+      </form>
+    </div>
+  </section>
+
+
+  <div class="trust" aria-label="Por que confiar">
+    <div class="wrap">
+      <span><b>CNPJ</b> 51.991.844/0001-82</span>
+      <span><b>Equipe própria</b> de instalação e manutenção</span>
+      <span><b>Todo o estado</b> de São Paulo</span>
+      <span><b>PMOC</b> conforme Lei 13.589/2018</span>
+      <span><b>R-410A e R-32</b></span>
+    </div>
+  </div>
+
+  <section id="segmentos" aria-labelledby="seg-title">
+    <div class="wrap">
+      <h2 class="sec-title" id="seg-title">Como trabalhamos com a sua empresa</h2>
+      <p class="sec-lead">Cada tipo de cliente precisa de uma coisa diferente da climatização. Escolha o seu.</p>
+      <div class="tabs" role="tablist" aria-label="Tipo de empresa">
+        <button class="tab" role="tab" id="t-construtora" aria-selected="true" aria-controls="seg-panel" data-seg="construtora">Construtora</button>
+        <button class="tab" role="tab" id="t-arquitetura" aria-selected="false" aria-controls="seg-panel" data-seg="arquitetura">Escritório de arquitetura</button>
+        <button class="tab" role="tab" id="t-engenharia" aria-selected="false" aria-controls="seg-panel" data-seg="engenharia">Engenharia e fit-out</button>
+        <button class="tab" role="tab" id="t-condominio" aria-selected="false" aria-controls="seg-panel" data-seg="condominio">Condomínio e facilities</button>
+      </div>
+      <div id="seg-panel" class="panel" role="tabpanel" aria-labelledby="t-construtora"></div>
+    </div>
+  </section>
+
+  <section class="work" aria-labelledby="work-title">
+    <div class="wrap">
+      <h2 class="sec-title" id="work-title">Obras executadas</h2>
+      <p class="sec-lead">Fotos dos nossos serviços em campo.</p>
+      <div class="strip">
+        <figure><img loading="lazy" src="/images/campo/rack-compressores.webp" alt="Rack de compressores instalado em área externa"><figcaption>Rack de compressores</figcaption></figure>
+        <figure><img loading="lazy" src="/images/campo/duto-forro.webp" alt="Rede de dutos instalada sob a laje antes do forro"><figcaption>Dutos antes do forro</figcaption></figure>
+        <figure><img loading="lazy" src="/images/campo/cassete.webp" alt="Evaporadora cassete instalada em forro de madeira"><figcaption>Cassete em forro decorativo</figcaption></figure>
+        <figure><img loading="lazy" src="/images/campo/piso-teto.webp" alt="Equipamento piso-teto em obra comercial"><figcaption>Piso-teto em obra comercial</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="steps-title">
+    <div class="wrap">
+      <h2 class="sec-title" id="steps-title">Do primeiro contato à entrega</h2>
+      <p class="sec-lead">Nada é executado sem orçamento aprovado por escrito.</p>
+      <ol class="steps">
+        <li><b>Você manda o projeto</b><span>Planta, memorial ou só a descrição da obra, pelo WhatsApp ou pelo formulário.</span></li>
+        <li><b>Analisamos e visitamos</b><span>Levantamento técnico do local e da carga térmica quando necessário.</span></li>
+        <li><b>Proposta por escrito</b><span>Solução, escopo e condições claras antes de começar.</span></li>
+        <li><b>Execução e suporte</b><span>Instalação no cronograma da obra e atendimento depois da entrega.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="season" aria-labelledby="season-title">
+    <div class="wrap season-grid">
+      <div>
+        <h2 class="sec-title" id="season-title">O verão começa em 21 de dezembro.</h2>
+        <p class="sec-lead">É quando as equipes de instalação lotam e a manutenção vira emergência. Feche a climatização da obra e o PMOC do prédio antes do pico.</p>
+      </div>
+      <a class="btn btn-wa big" href="#topo" data-focus-form>Pedir orçamento agora</a>
+    </div>
+  </section>
+
+  <section id="faq" aria-labelledby="faq-title">
+    <div class="wrap faq">
+      <h2 class="sec-title" id="faq-title">Perguntas de quem contrata</h2>
+      <details><summary>Vocês atendem fora da capital?</summary><p>Sim. Atendemos todo o estado de São Paulo: capital, Grande São Paulo, ABC, interior e litoral.</p></details>
+      <details><summary>Fazem só a instalação ou também o projeto?</summary><p>Os dois. Calculamos a carga térmica, definimos o sistema (Split, cassete, dutado, VRF, Self Contained ou água gelada), desenhamos a rede de dutos e executamos a instalação.</p></details>
+      <details><summary>Meu prédio precisa de PMOC?</summary><p>Ambientes climatizados de uso coletivo precisam de Plano de Manutenção, Operação e Controle pela Lei 13.589/2018. Fazemos o levantamento dos equipamentos, o plano, as rotinas e os registros.</p></details>
+      <details><summary>Como funciona o orçamento?</summary><p>Você manda o projeto ou a descrição da obra, fazemos o levantamento técnico quando necessário e enviamos uma proposta por escrito com escopo e condições. Nada é executado sem aprovação.</p></details>
+      <details><summary>Trabalham com obras em andamento?</summary><p>Sim. Entramos no cronograma da obra, inclusive para infraestrutura antes do fechamento do forro, e também em retrofit e fit-out de áreas corporativas.</p></details>
+    </div>
+  </section>
+
+  <section class="form-sec" id="contato" aria-labelledby="contact-title">
+    <div class="wrap contact-end">
+      <div>
+        <h2 class="sec-title" id="contact-title">Fale com a Inter-Cool</h2>
+        <div class="contact-alt">
+          <div><strong>WhatsApp e telefone</strong> (11) 97799-0182</div>
+          <div><strong>E-mail</strong> intercoolclimatizacao@gmail.com</div>
+          <div><strong>Atendimento</strong> segunda a sexta, 8h25 às 17h30</div>
+        </div>
+      </div>
+      <div class="ctas">
+        <a class="btn btn-wa" href="https://wa.me/5511977990182?text=Ol%C3%A1%2C%20quero%20um%20or%C3%A7amento%20para%20uma%20obra." target="_blank" rel="noopener">Chamar no WhatsApp</a>
+        <a class="btn btn-ghost" href="tel:+5511977990182">Ligar agora</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>INTER-COOL CLIMATIZAÇÃO E REFRIGERAÇÃO LTDA · CNPJ 51.991.844/0001-82 · São Paulo-SP</span>
+    <a href="/">Site institucional</a>
+  </div>
+</footer>
+
+<nav class="mbar" aria-label="Contato rápido">
+  <a href="tel:+5511977990182">Ligar</a>
+  <a class="go" href="https://wa.me/5511977990182?text=Ol%C3%A1%2C%20quero%20um%20or%C3%A7amento%20para%20uma%20obra." target="_blank" rel="noopener">WhatsApp</a>
+</nav>
+
+<script>
+/* Airflow: thin cold streams falling like air leaving a diffuser */
+(function(){
+  const c=document.getElementById('air'); if(!c) return;
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const x=c.getContext('2d'); let w,h,dpr,lines=[];
+  function size(){dpr=Math.min(2,devicePixelRatio||1);w=c.clientWidth;h=c.clientHeight;c.width=w*dpr;c.height=h*dpr;x.setTransform(dpr,0,0,dpr,0,0);
+    lines=Array.from({length:Math.round(w/26)},(_,i)=>({x0:(i+Math.random())*26,ph:Math.random()*6.28,sp:.35+Math.random()*.5,a:.10+Math.random()*.22,len:.35+Math.random()*.45}))}
+  function draw(t){x.clearRect(0,0,w,h);
+    for(const l of lines){x.beginPath();const top=((t*.00006*l.sp*h)+l.ph*80)%(h*1.4)-h*.4;const L=h*l.len;
+      for(let y=0;y<=L;y+=8){const yy=top+y;const xx=l.x0+Math.sin(yy*.012+l.ph+t*.0006)*14*(y/L);y?x.lineTo(xx,yy):x.moveTo(xx,yy)}
+      const g=x.createLinearGradient(0,top,0,top+L);g.addColorStop(0,'rgba(92,195,221,0)');g.addColorStop(.6,`rgba(92,195,221,${l.a})`);g.addColorStop(1,'rgba(92,195,221,0)');
+      x.strokeStyle=g;x.lineWidth=1.2;x.stroke()}
+    if(!reduce&&!document.hidden) requestAnimationFrame(draw)}
+  size(); addEventListener('resize',size); requestAnimationFrame(draw);
+  document.addEventListener('visibilitychange',()=>{if(!document.hidden&&!reduce)requestAnimationFrame(draw)});
+})();
+
+/* Segment tabs */
+const IMG='/images/campo/';
+const SEG={
+  construtora:{img:'vrf-cobertura.webp',alt:'Condensadoras VRF na cobertura de um edifício',h:'Infraestrutura no cronograma da obra',p:'A climatização entra antes do forro fechar e não atrasa o acabamento.',li:['Tubulação frigorígena, drenos e pontos por pavimento','VRF e cassete em áreas comuns e lojas','Entrega de unidades com equipamento instalado'],ask:'Mande o projeto ou o memorial para cotarmos a climatização.',tipo:'Construtora'},
+  arquitetura:{img:'duto-grelha.webp',alt:'Dutos e grelha de insuflamento instalados',h:'Climatização compatibilizada com o seu projeto',p:'Resolva no projeto onde ficam condensadoras, dutos e grelhas, sem surpresa na obra.',li:['Cálculo de carga térmica por ambiente','Cassete, dutado ou piso-teto: a escolha certa para cada espaço','Instalação limpa, respeitando forro e acabamentos'],ask:'Quer um contato técnico de climatização para o próximo projeto?',tipo:'Escritório de arquitetura'},
+  engenharia:{img:'duto-forro.webp',alt:'Rede de dutos sob a laje em obra corporativa',h:'Subcontratação de climatização em fit-out e retrofit',p:'Equipe própria para cumprir o prazo de obras corporativas.',li:['Redes de dutos, VRF e Self Contained','Desmontagem e reinstalação em retrofit','Comissionamento e documentação de entrega'],ask:'Tem obra em orçamento? Mande o escopo de climatização.',tipo:'Engenharia / fit-out'},
+  condominio:{img:'rack-compressores.webp',alt:'Rack de compressores em área técnica',h:'PMOC e manutenção recorrente',p:'Ambientes climatizados de uso coletivo precisam de PMOC (Lei 13.589/2018). Manutenção preventiva evita parada no verão.',li:['Levantamento dos equipamentos do prédio','Plano de manutenção, execução e registros','Atendimento corretivo quando precisar'],ask:'Peça o levantamento de um dos seus prédios.',tipo:'Condomínio / facilities'}
+};
+const panel=document.getElementById('seg-panel');
+function show(k){const s=SEG[k];
+  panel.innerHTML=`<img src="${IMG+s.img}" alt="${s.alt}" loading="lazy"><div><h3>${s.h}</h3><p>${s.p}</p><ul>${s.li.map(i=>`<li>${i}</li>`).join('')}</ul><p class="ask">${s.ask}</p><a class="btn btn-wa" href="#topo" data-pick="${s.tipo}">Pedir orçamento para ${s.tipo.toLowerCase()}</a></div>`;
+  panel.classList.remove('swap');void panel.offsetWidth;panel.classList.add('swap');
+  document.querySelectorAll('.tab').forEach(t=>{const on=t.dataset.seg===k;t.setAttribute('aria-selected',on);t.tabIndex=on?0:-1;if(on)panel.setAttribute('aria-labelledby',t.id)});}
+document.querySelector('.tabs').addEventListener('click',e=>{const t=e.target.closest('.tab');if(t)show(t.dataset.seg)});
+document.querySelector('.tabs').addEventListener('keydown',e=>{const ts=[...document.querySelectorAll('.tab')];const i=ts.indexOf(document.activeElement);if(i<0)return;
+  if(e.key==='ArrowRight'||e.key==='ArrowLeft'){const n=ts[(i+(e.key==='ArrowRight'?1:ts.length-1))%ts.length];n.focus();show(n.dataset.seg);e.preventDefault()}});
+show('construtora');
+
+/* Two-step quote form: step 1 picks the segment, step 2 sends to WhatsApp (or e-mail) */
+const f=document.getElementById('lead'),msg=document.getElementById('msg'),s1=document.getElementById('s1'),s2=document.getElementById('s2');
+function step(n){s1.hidden=n!==1;s2.hidden=n!==2;document.getElementById('q-step').textContent='Etapa '+n+' de 2';document.getElementById('q-prog').style.width=n===1?'50%':'100%';
+  const el=n===1?s1:s2;el.classList.remove('step-in');void el.offsetWidth;el.classList.add('step-in');if(n===2)document.getElementById('nome').focus()}
+s1.addEventListener('change',e=>{if(e.target.name==='tipo'){msg.textContent='';step(2)}});
+document.getElementById('back').addEventListener('click',()=>step(1));
+function pick(t){const r=[...f.querySelectorAll('input[name=tipo]')].find(i=>i.value===t);if(r){r.checked=true;step(2)}}
+document.querySelectorAll('[data-pick]').forEach(()=>{});
+panel.addEventListener('click',e=>{const a=e.target.closest('[data-pick]');if(a)setTimeout(()=>pick(a.dataset.pick),400)});
+document.querySelectorAll('[data-focus-form]').forEach(a=>a.addEventListener('click',()=>setTimeout(()=>{(s1.hidden?document.getElementById('nome'):f.querySelector('input[name=tipo]')).focus({preventScroll:true})},500)));
+function build(){const v=id=>document.getElementById(id).value.trim();const tipo=(f.querySelector('input[name=tipo]:checked')||{}).value||'Não informado';
+  if(!v('nome')||!v('empresa')){msg.className='msg err';msg.textContent='Preencha seu nome e o nome da empresa.';return null}
+  if(!document.getElementById('ok').checked){msg.className='msg err';msg.textContent='Marque a autorização para podermos responder.';return null}
+  msg.className='msg';
+  return `Olá, Inter-Cool! Quero um orçamento.\n\nNome: ${v('nome')}\nEmpresa: ${v('empresa')}\nTipo: ${tipo}\nPreciso de: ${v('detalhes')||'a combinar'}\n\n(via página de obras e empresas)`}
+f.addEventListener('submit',e=>{e.preventDefault();const t=build();if(!t)return;
+  const url='https://wa.me/5511977990182?text='+encodeURIComponent(t);
+  msg.className='msg';msg.innerHTML='Pedido pronto. <a class="btn btn-wa wide" style="margin-top:8px" href="'+url+'" target="_blank" rel="noopener">Abrir WhatsApp e enviar</a>';
+  try{window.open(url,'_blank','noopener')}catch(e){}});
+document.getElementById('send-mail').addEventListener('click',()=>{const t=build();if(!t)return;
+  location.href='mailto:intercoolclimatizacao@gmail.com?subject='+encodeURIComponent('[Obra] Pedido de orçamento - '+document.getElementById('empresa').value.trim())+'&body='+encodeURIComponent(t);
+  msg.textContent='Abrimos seu e-mail com o pedido preenchido.'});
+</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+{
+  "name": "inter-cool-3d-office",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Escrit\u00f3rio virtual 3D da Inter-Cool AI Company: visualiza os agentes reais orquestrados pelo Ruflo (e Hermes) em tempo real.",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev:server": "tsx watch server/index.ts",
+    "dev:web": "vite",
+    "build": "tsc --noEmit -p . && vite build",
+    "start": "tsx server/index.ts",
+    "test": "tsx --test test/*.test.ts",
+    "e2e:ruflo": "tsx test/e2e-ruflo.ts",
+    "seed:agents": "tsx scripts/seed-agents.ts"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.20.0",
+    "three": "^0.183.2",
+    "tsx": "^4.20.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/three": "^0.183.0",
+    "typescript": "^5.9.0",
+    "vite": "^7.1.0"
+  }
+}
