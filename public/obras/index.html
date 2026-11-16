@@ -54,6 +54,8 @@ a{color:inherit}
 .qcard.reveal{animation-delay:.55s}
 #air{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
 .hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:48px;align-items:center}
+.for{display:inline-block;margin:0 0 16px;padding:7px 14px;border-radius:999px;background:rgba(92,195,221,.16);border:1px solid rgba(92,195,221,.45);color:#E3F4FA;font-size:15px;font-weight:600}
+.for[hidden]{display:none}
 .hero h1{font:italic 500 clamp(40px,6.2vw,76px)/1.04 var(--display);margin:0 0 22px;letter-spacing:-.01em;text-wrap:balance}
 .hero p.lead{font-size:clamp(18px,1.6vw,21px);color:#D4E1F2;max-width:34em;margin:0 0 30px}
 .ctas{display:flex;flex-wrap:wrap;gap:12px}
@@ -219,6 +221,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
     <div class="slide-meta"><div class="dots" id="dots" role="group" aria-label="Fotos de obras"></div><span id="cap">Obra: VRF na cobertura</span></div>
     <div class="wrap">
       <div>
+        <p class="for reveal" id="para" hidden></p>
         <h1 id="h1" aria-label="Ar-condicionado da sua obra entregue no cronograma, do projeto ao PMOC."><span class="w" style="animation-delay:0.08s">Ar-condicionado</span> <span class="w" style="animation-delay:0.14s">da</span> <span class="w" style="animation-delay:0.20s">sua</span> <span class="w" style="animation-delay:0.26s">obra</span> <span class="w" style="animation-delay:0.32s">entregue</span> <span class="w" style="animation-delay:0.38s">no</span> <span class="w" style="animation-delay:0.44s">cronograma,</span> <span class="w" style="animation-delay:0.50s">do</span> <span class="w" style="animation-delay:0.56s">projeto</span> <span class="w" style="animation-delay:0.62s">ao</span> <span class="w" style="animation-delay:0.68s">PMOC.</span></h1>
         <p class="lead reveal" style="animation-delay:.7s">Instalamos e mantemos VRF, Self Contained, chillers, cassetes e redes de dutos para construtoras, escritórios de arquitetura, gerenciadoras e condomínios em todo o estado de São Paulo.</p>
         <div class="ctas reveal" style="animation-delay:.85s">
@@ -417,7 +420,7 @@ function build(){const v=id=>document.getElementById(id).value.trim();const tipo
   if(!v('nome')||!v('empresa')){msg.className='msg err';msg.textContent='Preencha seu nome e o nome da empresa.';return null}
   if(!document.getElementById('ok').checked){msg.className='msg err';msg.textContent='Marque a autorização para podermos responder.';return null}
   msg.className='msg';
-  return `Olá, Inter-Cool! Quero um orçamento.\n\nNome: ${v('nome')}\nEmpresa: ${v('empresa')}\nTipo: ${tipo}\nPreciso de: ${v('detalhes')||'a combinar'}\n\n(via página de obras e empresas)`}
+  return `Olá, Inter-Cool! Quero um orçamento.\n\nNome: ${v('nome')}\nEmpresa: ${v('empresa')}\nTipo: ${tipo}\nPreciso de: ${v('detalhes')||'a combinar'}\n\n(via página de obras e empresas${ORIGEM?' · '+ORIGEM:''})`}
 f.addEventListener('submit',e=>{e.preventDefault();const t=build();if(!t)return;
   const url='https://wa.me/5511977990182?text='+encodeURIComponent(t);
   msg.className='msg';msg.innerHTML='Pedido pronto. <a class="btn btn-wa wide" style="margin-top:8px" href="'+url+'" target="_blank" rel="noopener">Abrir WhatsApp e enviar</a>';
@@ -425,6 +428,16 @@ f.addEventListener('submit',e=>{e.preventDefault();const t=build();if(!t)return;
 document.getElementById('send-mail').addEventListener('click',()=>{const t=build();if(!t)return;
   location.href='mailto:intercoolclimatizacao@gmail.com?subject='+encodeURIComponent('[Obra] Pedido de orçamento - '+document.getElementById('empresa').value.trim())+'&body='+encodeURIComponent(t);
   msg.textContent='Abrimos seu e-mail com o pedido preenchido.'});
+/* Prospecção: link personalizado ?empresa=Nome&tipo=construtora&origem=email */
+const Q=new URLSearchParams(location.search);
+const ORIGEM=(Q.get('origem')||Q.get('utm_source')||'').slice(0,40);
+(function(){
+  const MAP={construtora:'Construtora',arquitetura:'Escritório de arquitetura',engenharia:'Engenharia / fit-out',condominio:'Condomínio / facilities'};
+  const tipo=(Q.get('tipo')||'').toLowerCase();
+  if(MAP[tipo]){show(tipo);const r=[...f.querySelectorAll('input[name=tipo]')].find(i=>i.value===MAP[tipo]);if(r){r.checked=true;s1.hidden=true;s2.hidden=false;document.getElementById('q-step').textContent='Etapa 2 de 2';document.getElementById('q-prog').style.width='100%'}}
+  const emp=(Q.get('empresa')||'').trim().slice(0,80);
+  if(emp){document.getElementById('empresa').value=emp;const p=document.getElementById('para');p.textContent='Apresentação preparada para '+emp;p.hidden=false;document.title='Inter-Cool para '+emp}
+})();
 </script>
 </body>
 </html>
