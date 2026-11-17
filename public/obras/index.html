@@ -98,6 +98,29 @@ section{padding-block:88px}
 .steps b{display:block;font-size:19px;margin-bottom:4px}
 .steps span{color:var(--muted);font-size:16px}
 
+/* Remote monitoring */
+.mon{background:#fff}
+.mon-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:center}
+.mon ul{margin:0 0 24px;padding:0;list-style:none;display:grid;gap:14px}
+.mon li{display:grid;grid-template-columns:28px 1fr;gap:10px}
+.mon li b{display:block}
+.mon li span{color:var(--muted);font-size:16px}
+.mon .ic{width:28px;height:28px;border-radius:8px;background:var(--frost);color:var(--steel);display:grid;place-items:center;font-weight:700;font-size:15px}
+.mon .note{font-size:15px;color:var(--muted);margin:0 0 22px}
+.dash{background:var(--ink);color:#fff;border-radius:18px;padding:22px;box-shadow:0 24px 60px rgba(7,22,52,.25)}
+.dash-h{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:16px;font-size:15px;color:#C7D6EA}
+.dash-h b{color:#fff;font-size:17px}
+.live{display:inline-flex;align-items:center;gap:6px;color:#7BE3A1;font-weight:600}
+.live::before{content:"";width:8px;height:8px;border-radius:50%;background:#2BD46E;animation:pulse 1.6s ease-in-out infinite}
+@keyframes pulse{50%{opacity:.3}}
+.kpis{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-bottom:14px}
+.kpi{background:var(--steel);border-radius:12px;padding:12px}
+.kpi small{display:block;font-size:13px;color:#A9BCD6}
+.kpi strong{font-size:22px}
+.spark{width:100%;height:70px;display:block;margin-bottom:14px}
+.alert{display:flex;gap:10px;align-items:flex-start;background:rgba(255,196,87,.12);border:1px solid rgba(255,196,87,.45);border-radius:12px;padding:12px;font-size:15px;color:#FFE3AE}
+.dash-f{font-size:13px;color:#8FA3C0;margin-top:12px}
+@media (max-width:860px){.mon-grid{grid-template-columns:minmax(0,1fr)}.kpis{grid-template-columns:repeat(3,minmax(0,1fr))}}
 /* Form */
 .form-sec{background:var(--ink);color:#fff}
 .form-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:56px;align-items:start}
@@ -307,6 +330,34 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
     </div>
   </section>
 
+  <section class="mon" id="monitoramento" aria-labelledby="mon-title">
+    <div class="wrap mon-grid">
+      <div>
+        <h2 class="sec-title" id="mon-title">Monitoramento remoto + PMOC</h2>
+        <p class="sec-lead">Acompanhe as máquinas do prédio pelo celular e saiba do problema antes de o ar parar.</p>
+        <ul>
+          <li><span class="ic">1</span><div><b>Veja tudo em tempo real</b><span>Ligado ou desligado, temperatura do ar, temperatura desejada e consumo, em gráficos.</span></div></li>
+          <li><span class="ic">2</span><div><b>Receba alertas</b><span>Aviso de manutenção, temperatura fora do normal ou equipamento sem comunicação.</span></div></li>
+          <li><span class="ic">3</span><div><b>Ajuste a distância</b><span>Ligar, desligar e mudar a temperatura sem ir até a casa de máquinas.</span></div></li>
+          <li><span class="ic">4</span><div><b>PMOC com dados reais</b><span>Os registros do monitoramento entram no plano de manutenção do prédio.</span></div></li>
+        </ul>
+        <p class="note">Para centrais de ar, VRF, chillers e Self Contained com saída de comunicação. Verificamos na visita técnica o que cada equipamento permite.</p>
+        <a class="btn btn-wa" href="#topo" data-pick="Condomínio / facilities">Quero monitorar meu prédio</a>
+      </div>
+      <div class="dash" role="img" aria-label="Exemplo de painel de monitoramento com temperatura, status e um alerta de manutenção">
+        <div class="dash-h"><b>Central de ar · Bloco A</b><span class="live">Ao vivo</span></div>
+        <div class="kpis">
+          <div class="kpi"><small>Status</small><strong>Ligado</strong></div>
+          <div class="kpi"><small>Ar insuflado</small><strong>17,8 °C</strong></div>
+          <div class="kpi"><small>Desejado</small><strong>18 °C</strong></div>
+        </div>
+        <svg class="spark" viewBox="0 0 300 70" preserveAspectRatio="none" aria-hidden="true"><polyline fill="none" stroke="#5CC3DD" stroke-width="2.5" points="0,48 25,44 50,46 75,38 100,40 125,34 150,36 175,30 200,33 225,28 250,31 275,27 300,29"/><line x1="0" y1="30" x2="300" y2="30" stroke="rgba(255,255,255,.25)" stroke-dasharray="4 4"/></svg>
+        <div class="alert"><span aria-hidden="true">⚠</span><span>Filtro com 92% de uso. Manutenção sugerida em 5 dias.</span></div>
+        <p class="dash-f">Imagem ilustrativa do painel.</p>
+      </div>
+    </div>
+  </section>
+
   <section class="season" aria-labelledby="season-title">
     <div class="wrap season-grid">
       <div>
@@ -413,7 +464,7 @@ function step(n){s1.hidden=n!==1;s2.hidden=n!==2;document.getElementById('q-step
 s1.addEventListener('change',e=>{if(e.target.name==='tipo'){msg.textContent='';step(2)}});
 document.getElementById('back').addEventListener('click',()=>step(1));
 function pick(t){const r=[...f.querySelectorAll('input[name=tipo]')].find(i=>i.value===t);if(r){r.checked=true;step(2)}}
-document.querySelectorAll('[data-pick]').forEach(()=>{});
+document.getElementById('monitoramento').addEventListener('click',e=>{const a=e.target.closest('[data-pick]');if(a)setTimeout(()=>{const d=document.getElementById('detalhes');if(!d.value)d.value='Monitoramento remoto + PMOC';pick(a.dataset.pick)},400)});
 panel.addEventListener('click',e=>{const a=e.target.closest('[data-pick]');if(a)setTimeout(()=>pick(a.dataset.pick),400)});
 document.querySelectorAll('[data-focus-form]').forEach(a=>a.addEventListener('click',()=>setTimeout(()=>{(s1.hidden?document.getElementById('nome'):f.querySelector('input[name=tipo]')).focus({preventScroll:true})},500)));
 function build(){const v=id=>document.getElementById(id).value.trim();const tipo=(f.querySelector('input[name=tipo]:checked')||{}).value||'Não informado';
