@@ -268,11 +268,40 @@ section:not(.hero),.work,.season,.mon,.form-sec,.trust,footer{background:transpa
 .btn-mail{background:rgba(255,255,255,.85)}
 .hero-slides::after{background:linear-gradient(100deg,rgba(6,18,48,.95) 16%,rgba(6,18,48,.6) 50%,rgba(6,18,48,.15) 100%)}
 footer{border-top:1px solid var(--edge)}
+
+/* ===== Motion layer ===== */
+.prog{position:fixed;left:0;top:0;height:3px;width:100%;z-index:20;transform-origin:0 50%;transform:scaleX(0);background:linear-gradient(90deg,#5CC3DD,#9BE4F5,#1FAF57);box-shadow:0 0 10px #5CC3DD}
+.rv{opacity:0;transform:translateY(40px) scale(.98);filter:blur(6px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1),filter .9s}
+.rv.in{opacity:1;transform:none;filter:none}
+.tilt{transform-style:preserve-3d;transition:transform .25s ease-out;will-change:transform}
+/* Story: sticky building cross-section */
+.story{position:relative;height:340vh}
+.story .pin{position:sticky;top:0;height:100vh;display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:40px;align-items:center;max-width:1160px;margin:0 auto;padding:0 20px}
+.story .kicker{font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:#9BE4F5;font-weight:600}
+.story h2{font:italic 500 clamp(30px,3.6vw,46px)/1.1 var(--display);margin:10px 0 18px;color:#fff}
+.chap{position:relative;min-height:190px}
+.chap>div{position:absolute;inset:0;opacity:0;transform:translateY(24px);transition:opacity .5s,transform .5s}
+.chap>div.on{opacity:1;transform:none}
+.chap b{display:block;font-size:22px;color:#fff;margin-bottom:8px}
+.chap p{margin:0;color:#B8C8DD}
+.pips{display:flex;gap:8px;margin-top:18px}
+.pips i{width:34px;height:4px;border-radius:2px;background:rgba(255,255,255,.2);overflow:hidden;position:relative}
+.pips i b{position:absolute;inset:0;background:#5CC3DD;transform-origin:0 50%;transform:scaleX(0)}
+.bld{width:100%;height:auto;max-height:82vh;filter:drop-shadow(0 30px 60px rgba(0,0,0,.5))}
+.bld .duct{fill:none;stroke:#5CC3DD;stroke-width:5;stroke-linecap:round}
+.bld .pipe{fill:none;stroke:#F4A261;stroke-width:3;stroke-linecap:round}
+.bld .fade{opacity:0;transition:opacity .5s}
+.bld .on{opacity:1}
+.bld .flow{fill:#9BE4F5}
+.bld .chk{fill:none;stroke:#1FAF57;stroke-width:4;stroke-linecap:round;stroke-linejoin:round}
+@media (max-width:860px){.story{height:300vh}.story .pin{grid-template-columns:minmax(0,1fr);align-content:center;gap:14px}.bld{max-height:46vh}.chap{min-height:150px}.story h2{margin-bottom:8px}}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;filter:none;transition:none}.story{height:auto}.story .pin{position:static;height:auto;padding-block:64px}.chap>div{position:static;opacity:1;transform:none;margin-bottom:16px}}
 @media (prefers-reduced-motion:reduce){body::before{animation:none}.strip figure:hover,.btn:hover{transform:none}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.swap,.hero-slides .sl.on,.dots button.on::after{animation:none}.reveal,.hero h1 .w{animation:none;opacity:1;transform:none}}
 </style>
 </head>
 <body>
+<div class="prog" id="prog" aria-hidden="true"></div>
 
 <header class="bar">
   <div class="wrap">
@@ -370,6 +399,45 @@ footer{border-top:1px solid var(--edge)}
         <figure><img loading="lazy" src="/images/campo/cassete.webp" alt="Evaporadora cassete instalada em forro de madeira"><figcaption>Cassete em forro decorativo</figcaption></figure>
         <figure><img loading="lazy" src="/images/campo/piso-teto.webp" alt="Equipamento piso-teto em obra comercial"><figcaption>Piso-teto em obra comercial</figcaption></figure>
       </div>
+    </div>
+  </section>
+
+  <section class="story" id="historia" aria-labelledby="story-title">
+    <div class="pin">
+      <div>
+        <span class="kicker">Role a página</span>
+        <h2 id="story-title">Como a sua obra fica climatizada</h2>
+        <div class="chap" id="chap">
+          <div class="on"><b>1. Projeto e carga térmica</b><p>Calculamos a carga de cada ambiente e definimos o sistema certo: VRF, Self Contained, cassete ou dutado.</p></div>
+          <div><b>2. Infraestrutura antes do forro</b><p>Tubulação, drenos e redes de dutos entram no cronograma, antes do acabamento.</p></div>
+          <div><b>3. Equipamentos e partida</b><p>Condensadoras na cobertura, evaporadoras nos pavimentos, teste e comissionamento.</p></div>
+          <div><b>4. PMOC e manutenção</b><p>Depois da entrega, o prédio segue com plano de manutenção conforme a Lei 13.589/2018.</p></div>
+        </div>
+        <div class="pips" id="pips"><i><b></b></i><i><b></b></i><i><b></b></i><i><b></b></i></div>
+      </div>
+      <svg class="bld" id="bld" viewBox="0 0 520 520" role="img" aria-label="Corte de um prédio mostrando dutos, tubulação, condensadoras na cobertura e a checagem do PMOC">
+        <defs><linearGradient id="gl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".16"/><stop offset="1" stop-color="#fff" stop-opacity=".04"/></linearGradient></defs>
+        <rect x="70" y="110" width="380" height="380" rx="14" fill="url(#gl)" stroke="rgba(255,255,255,.35)"/>
+        <g stroke="rgba(255,255,255,.22)"><line x1="70" y1="205" x2="450" y2="205"/><line x1="70" y1="300" x2="450" y2="300"/><line x1="70" y1="395" x2="450" y2="395"/></g>
+        <g class="fade" id="g-calc" font-family="IBM Plex Sans,sans-serif" font-size="15" fill="#9BE4F5">
+          <rect x="100" y="140" width="120" height="44" rx="10" fill="rgba(92,195,221,.15)" stroke="#5CC3DD"/><text x="114" y="167">12,4 kW</text>
+          <rect x="300" y="235" width="120" height="44" rx="10" fill="rgba(92,195,221,.15)" stroke="#5CC3DD"/><text x="314" y="262">9,8 kW</text>
+          <rect x="100" y="330" width="120" height="44" rx="10" fill="rgba(92,195,221,.15)" stroke="#5CC3DD"/><text x="114" y="357">15,1 kW</text>
+        </g>
+        <path class="pipe" id="p-pipe" d="M420 110 V470 M420 160 H90 M420 255 H90 M420 350 H90 M420 445 H90"/>
+        <path class="duct" id="p-duct" d="M110 190 H400 M110 285 H400 M110 380 H400 M110 475 H400"/>
+        <g class="fade" id="g-eq">
+          <g fill="#DCE7F5" stroke="#0F2752" stroke-width="2"><rect x="300" y="62" width="58" height="48" rx="6"/><rect x="366" y="62" width="58" height="48" rx="6"/></g>
+          <g fill="#0F2752"><circle cx="329" cy="86" r="15"/><circle cx="395" cy="86" r="15"/></g>
+          <g fill="#fff" stroke="#5CC3DD"><rect x="150" y="183" width="44" height="14" rx="3"/><rect x="300" y="183" width="44" height="14" rx="3"/><rect x="150" y="278" width="44" height="14" rx="3"/><rect x="300" y="278" width="44" height="14" rx="3"/><rect x="150" y="373" width="44" height="14" rx="3"/><rect x="300" y="373" width="44" height="14" rx="3"/><rect x="150" y="468" width="44" height="14" rx="3"/><rect x="300" y="468" width="44" height="14" rx="3"/></g>
+          <g id="flows"></g>
+        </g>
+        <g class="fade" id="g-pmoc">
+          <rect x="250" y="16" width="250" height="38" rx="19" fill="rgba(31,175,87,.18)" stroke="#1FAF57"/>
+          <path class="chk" d="M266 35 l8 8 l14 -16"/>
+          <text x="298" y="41" font-family="IBM Plex Sans,sans-serif" font-size="15" font-weight="600" fill="#C9F5DA">PMOC em dia · Lei 13.589</text>
+        </g>
+      </svg>
     </div>
   </section>
 
@@ -544,6 +612,44 @@ const ORIGEM=(Q.get('origem')||Q.get('utm_source')||'').slice(0,40);
   if(MAP[tipo]){show(tipo);const r=[...f.querySelectorAll('input[name=tipo]')].find(i=>i.value===MAP[tipo]);if(r){r.checked=true;s1.hidden=true;s2.hidden=false;document.getElementById('q-step').textContent='Etapa 2 de 2';document.getElementById('q-prog').style.width='100%'}}
   const emp=(Q.get('empresa')||'').trim().slice(0,80);
   if(emp){document.getElementById('empresa').value=emp;const p=document.getElementById('para');p.textContent='Apresentação preparada para '+emp;p.hidden=false;document.title='Inter-Cool para '+emp}
+})();
+/* ===== Motion: progress bar, reveals, tilt, sticky story, live LCD ===== */
+(function(){
+  const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const prog=document.getElementById('prog');
+  const story=document.getElementById('historia'),chaps=[...document.querySelectorAll('#chap>div')],pips=[...document.querySelectorAll('#pips b')];
+  const duct=document.getElementById('p-duct'),pipe=document.getElementById('p-pipe');
+  const G={calc:document.getElementById('g-calc'),eq:document.getElementById('g-eq'),pmoc:document.getElementById('g-pmoc')};
+  [duct,pipe].forEach(p=>{const L=p.getTotalLength();p.style.strokeDasharray=L;p.style.strokeDashoffset=reduce?0:L;p.dataset.l=L});
+  if(reduce){Object.values(G).forEach(g=>g.classList.add('on'));return}
+  // reveal on scroll
+  const targets=document.querySelectorAll('.sec-title,.sec-lead,.panel,.strip figure,.steps li,.mon-grid>*,.season-grid,.faq details,.form-grid>*,.tabs');
+  targets.forEach((el,i)=>{el.classList.add('rv');el.style.transitionDelay=((i%4)*90)+'ms'});
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15});
+  targets.forEach(el=>io.observe(el));
+  // spatial tilt on glass cards
+  if(matchMedia('(hover:hover)').matches){document.querySelectorAll('.panel,.dash,.steps li,.qcard').forEach(el=>{el.classList.add('tilt');
+    el.addEventListener('pointermove',e=>{const r=el.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;el.style.transform=`perspective(900px) rotateY(${x*6}deg) rotateX(${-y*6}deg) translateZ(0)`});
+    el.addEventListener('pointerleave',()=>el.style.transform='')})}
+  // air particles in ducts
+  const fl=document.getElementById('flows');const parts=[];
+  [190,285,380,475].forEach(y=>{for(let k=0;k<5;k++){const c=document.createElementNS('http://www.w3.org/2000/svg','circle');c.setAttribute('r','3');c.setAttribute('class','flow');c.setAttribute('cy',y+16);fl.appendChild(c);parts.push({c,o:k/5,y})}});
+  let last=-1;
+  function frame(t){
+    const doc=document.documentElement,max=doc.scrollHeight-innerHeight;prog.style.transform=`scaleX(${max>0?scrollY/max:0})`;
+    const r=story.getBoundingClientRect(),span=r.height-innerHeight,p=Math.min(1,Math.max(0,-r.top/span));
+    const step=Math.min(3,Math.floor(p*4));
+    if(step!==last){chaps.forEach((c,i)=>c.classList.toggle('on',i===step));last=step}
+    pips.forEach((b,i)=>b.style.transform=`scaleX(${Math.min(1,Math.max(0,p*4-i))})`);
+    G.calc.classList.toggle('on',p>.02&&p<.25);
+    const d=Math.min(1,Math.max(0,(p-.22)/.22));pipe.style.strokeDashoffset=pipe.dataset.l*(1-d);duct.style.strokeDashoffset=duct.dataset.l*(1-Math.min(1,Math.max(0,(p-.3)/.2)));
+    G.eq.classList.toggle('on',p>.5);G.pmoc.classList.toggle('on',p>.76);
+    parts.forEach(q=>{const x=110+((q.o+t*.00012)%1)*290;q.c.setAttribute('cx',x);q.c.setAttribute('opacity',p>.55?.9:0)});
+    requestAnimationFrame(frame)}
+  requestAnimationFrame(frame);
+  // live LCD reading
+  const lcd=document.querySelector('.kpi:nth-child(2) strong');let v=17.8;
+  if(lcd)setInterval(()=>{v+=(Math.random()-.5)*.2;v=Math.min(18.3,Math.max(17.5,v));lcd.textContent=v.toFixed(1).replace('.',',')+' °C'},1600);
 })();
 </script>
 </body>
