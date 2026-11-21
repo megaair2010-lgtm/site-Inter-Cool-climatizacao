@@ -213,6 +213,62 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-betw
   .steps{grid-template-columns:1fr}
   .wa-mini span{display:none}
 }
+
+/* ===== Glassmorphism / Spatial UI: camadas de vidro fosco flutuando sobre fundo azul profundo ===== */
+:root{--glass:rgba(255,255,255,.08);--glass-2:rgba(255,255,255,.14);--edge:rgba(255,255,255,.22);--float:0 1px 0 rgba(255,255,255,.25) inset,0 30px 60px -12px rgba(0,0,0,.55),0 8px 20px rgba(0,0,0,.25)}
+body{background:#061230;color:#E8F0FA}
+body::before{content:"";position:fixed;inset:-20%;z-index:-1;pointer-events:none;background:
+ radial-gradient(40% 35% at 15% 20%,rgba(92,195,221,.35),transparent 70%),
+ radial-gradient(35% 30% at 85% 35%,rgba(90,110,255,.30),transparent 70%),
+ radial-gradient(45% 40% at 60% 90%,rgba(31,175,87,.18),transparent 70%),#061230;animation:drift 24s ease-in-out infinite alternate}
+@keyframes drift{to{transform:translate(-4%,3%) scale(1.06)}}
+section:not(.hero),.work,.season,.mon,.form-sec,.trust,footer{background:transparent}
+.sec-title{color:#fff}
+.sec-lead,.mon li span,.mon .note,.panel p,.steps span,.faq p,.strip figcaption{color:#B8C8DD}
+.panel .ask{color:#fff}
+.trust{border-block:1px solid var(--edge);backdrop-filter:blur(14px);background:rgba(255,255,255,.05)}
+/* vidro */
+.facts,.qcard,.tabs,.panel,.steps li,.faq details,.dash,.mon-grid>div:first-child,.form-sec form:not(.qcard),.strip figure{background:var(--glass);border:1px solid var(--edge);backdrop-filter:blur(22px) saturate(140%);-webkit-backdrop-filter:blur(22px) saturate(140%);box-shadow:var(--float)}
+.qcard{background:rgba(255,255,255,.12);color:#fff}
+.qcard label,.qhead b,.qstep legend{color:#fff}
+.qhead span,.qcard small,.qcard .consent,.qnote{color:#B8C8DD}
+.qcard input:not([type=radio]):not([type=checkbox]),.form-sec input,.form-sec select,.form-sec textarea{background:rgba(255,255,255,.1);color:#fff;border:1px solid var(--edge)}
+.qcard input::placeholder{color:#9FB2CF}
+.qbar{background:rgba(255,255,255,.15)}
+.qbar i{background:linear-gradient(90deg,#5CC3DD,#9BE4F5);box-shadow:0 0 12px rgba(92,195,221,.8)}
+.choice span{background:rgba(255,255,255,.08);border:1px solid var(--edge);color:#fff}
+.choice:hover span{background:rgba(255,255,255,.16);border-color:rgba(255,255,255,.4)}
+.choice input:checked+span{background:rgba(92,195,221,.25);border-color:#5CC3DD;box-shadow:0 0 0 3px rgba(92,195,221,.25)}
+.linkbtn,.qcard .msg{color:#9BE4F5}
+.tabs{display:inline-flex;padding:6px;border-radius:999px}
+.tab{background:transparent;border:1px solid transparent;color:#DCE7F5}
+.tab[aria-selected="true"]{background:rgba(255,255,255,.2);border-color:var(--edge);color:#fff;box-shadow:0 6px 18px rgba(0,0,0,.3)}
+.panel{padding:22px;border-radius:24px}
+.panel img{border-radius:16px}
+.strip figure{padding:8px;border-radius:18px;transition:transform .3s}
+.strip figure:hover{transform:translateY(-6px) scale(1.02)}
+.strip figcaption{padding:4px 6px}
+.steps li{border-radius:20px;padding:22px 20px;border-top:1px solid var(--edge)}
+.steps li::before{color:#9BE4F5}
+.steps b{color:#fff}
+.mon-grid>div:first-child{padding:28px;border-radius:24px}
+.mon li b{color:#fff}
+.mon .ic{background:rgba(92,195,221,.2);color:#9BE4F5;border:1px solid var(--edge)}
+.dash{background:rgba(6,18,48,.55);border-radius:24px}
+.kpi{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12)}
+.faq details{border-radius:18px;padding:16px 20px;margin-bottom:12px}
+.faq details:last-child{border-bottom:1px solid var(--edge)}
+.faq summary{color:#fff}
+.faq summary::after{color:#9BE4F5}
+.season-grid{background:var(--glass);border:1px solid var(--edge);backdrop-filter:blur(22px);box-shadow:var(--float);border-radius:24px;padding:32px}
+.btn{border-radius:14px;transition:transform .15s,box-shadow .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn-wa{background:linear-gradient(135deg,rgba(63,210,122,.95),rgba(23,138,68,.95));box-shadow:0 10px 30px rgba(31,175,87,.45),0 1px 0 rgba(255,255,255,.35) inset}
+.btn-ghost,.wa-mini{background:rgba(255,255,255,.1);border:1px solid var(--edge);backdrop-filter:blur(12px)}
+.btn-mail{background:rgba(255,255,255,.85)}
+.hero-slides::after{background:linear-gradient(100deg,rgba(6,18,48,.95) 16%,rgba(6,18,48,.6) 50%,rgba(6,18,48,.15) 100%)}
+footer{border-top:1px solid var(--edge)}
+@media (prefers-reduced-motion:reduce){body::before{animation:none}.strip figure:hover,.btn:hover{transform:none}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.swap,.hero-slides .sl.on,.dots button.on::after{animation:none}.reveal,.hero h1 .w{animation:none;opacity:1;transform:none}}
 </style>
 </head>
