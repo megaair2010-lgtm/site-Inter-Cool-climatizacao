@@ -84,7 +84,7 @@ export function HeroVideo() {
 
       <div className="relative mx-auto flex w-full max-w-[var(--content-max)] flex-1 flex-col justify-center px-4 pb-36 pt-28 sm:px-6 sm:pb-44 sm:pt-32 lg:px-8 lg:pb-48">
         <h1 className="hero-kicker max-w-xl text-sm font-medium leading-snug text-brand-light sm:text-base">
-          {SITE.COMPANY_NAME}: climatização e engenharia HVAC para empresas, indústrias e residências em {SITE.COMPANY_STATE === "SP" ? "todo o estado de São Paulo" : SITE.COMPANY_REGION}
+          {SITE.COMPANY_NAME}: climatização e engenharia HVAC para empresas, indústrias e residências em {SITE.COMPANY_REGION}
         </h1>
         <div className="mt-6 max-w-[46rem]">
           <h2 className="hero-title font-display text-[2.15rem] font-semibold leading-[1.06] tracking-[-0.02em] text-white sm:text-5xl lg:text-[4rem]">{lead.title}</h2>

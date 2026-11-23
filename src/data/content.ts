@@ -142,7 +142,7 @@ export const FAQ: FaqItem[] = [
   { id: "f4", question: "Vocês atendem empresas?", answer: "Sim. Atendemos comércios, escritórios, clínicas, restaurantes, condomínios e indústrias, incluindo contratos de manutenção e PMOC.", needsReview: false },
   { id: "f5", question: "Trabalham com sistemas VRF e chiller?", answer: "Sim. Atuamos com sistemas VRF/VRV e com manutenção de chillers, fancoils e Self Contained.", needsReview: false },
   { id: "f6", question: "Fazem orçamento?", answer: "Sim. Envie sua solicitação pelo formulário ou WhatsApp. Analisamos e retornamos com a proposta.", needsReview: false },
-  { id: "f7", question: "Quais regiões vocês atendem?", answer: `Atendemos ${SITE.COMPANY_REGION}: capital, Grande São Paulo, interior e litoral.`, needsReview: false },
+  { id: "f7", question: "Quais regiões vocês atendem?", answer: `Atendemos ${SITE.COMPANY_REGION}: capital, Grande São Paulo, ABC e Alphaville/Barueri. Obras em outras cidades são avaliadas conforme o projeto.`, needsReview: false },
   { id: "f8", question: "Qual o prazo para atendimento?", answer: "Respondemos as solicitações em horário comercial (segunda a sexta, das 8h25 às 17h30). O prazo de execução é informado no orçamento, de acordo com o tipo de serviço.", needsReview: false },
   { id: "f9", question: "Existe garantia?", answer: "Sim. As condições de garantia de cada serviço são informadas por escrito no orçamento.", needsReview: false },
   { id: "f10", question: "Quais marcas vocês atendem?", answer: "Atendemos as principais marcas do mercado. Consulte disponibilidade e compatibilidade para o seu equipamento.", needsReview: false },

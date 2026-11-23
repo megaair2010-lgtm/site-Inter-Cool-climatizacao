@@ -26,7 +26,7 @@ import { useSeo } from "../hooks";
 export function HomePage() {
   useSeo(
     "Engenharia de Climatização e HVAC em São Paulo",
-    "Inter-Cool: instalação e manutenção de sistemas VRF/VRV, chillers, fancoils, Self Contained, Split e Multi Split, dutos e PMOC em todo o estado de São Paulo.",
+    "Inter-Cool: instalação e manutenção de sistemas VRF/VRV, chillers, fancoils, Self Contained, Split e Multi Split, dutos e PMOC em São Paulo e região metropolitana.",
     "/"
   );
   return (
