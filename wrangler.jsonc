@@ -8,5 +8,7 @@
     "directory": "./dist",
     "not_found_handling": "single-page-application",
     "html_handling": "auto-trailing-slash"
-  }
+  },
+  // Necessário para as prévias de pull request (npx wrangler preview).
+  "previews": {}
 }
