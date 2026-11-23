@@ -5,7 +5,7 @@ import { SERVICES } from "../data/content";
 import { useSeo } from "../hooks";
 
 export function ServicesPage() {
-  useSeo("Serviços de climatização e HVAC", "Instalação, manutenção preventiva e corretiva, higienização, PMOC, VRF/VRV, chillers, fancoils e projetos HVAC em todo o estado de São Paulo.", "/servicos");
+  useSeo("Serviços de climatização e HVAC", "Instalação, manutenção preventiva e corretiva, higienização, PMOC, VRF/VRV, chillers, fancoils e projetos HVAC em São Paulo e região metropolitana.", "/servicos");
   return (
     <>
       <PageHero eyebrow="Serviços" title="Nossas soluções em climatização" text="Do projeto à manutenção, oferecemos soluções completas para manter seus ambientes confortáveis, eficientes e seguros." crumbs={[{ to: "/", label: "Início" }, { label: "Serviços" }]} />

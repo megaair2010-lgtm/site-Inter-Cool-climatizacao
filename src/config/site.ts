@@ -13,7 +13,7 @@
 export const SITE = {
   COMPANY_NAME: "Inter-Cool",
   COMPANY_LEGAL_NAME: "INTER-COOL CLIMATIZAÇÃO E REFRIGERAÇÃO LTDA",
-  COMPANY_TAGLINE: "Climatização e refrigeração com padrão profissional em todo o estado de São Paulo.",
+  COMPANY_TAGLINE: "Climatização e refrigeração com padrão profissional em São Paulo e região metropolitana.",
   COMPANY_DOCUMENT: "51.991.844/0001-82",
 
   /** Telefone para exibição */
@@ -25,8 +25,8 @@ export const SITE = {
   COMPANY_ADDRESS: "",
   COMPANY_CITY: "São Paulo",
   COMPANY_STATE: "SP",
-  COMPANY_REGION: "todo o estado de São Paulo",
-  SERVICE_AREAS: ["Capital", "Grande São Paulo", "Alphaville, Barueri e Santana de Parnaíba", "ABC Paulista", "Interior de SP", "Litoral de SP"] as string[],
+  COMPANY_REGION: "São Paulo e região metropolitana",
+  SERVICE_AREAS: ["Capital", "Grande São Paulo", "Alphaville, Barueri e Santana de Parnaíba", "ABC Paulista", "Outras cidades: sob consulta"] as string[],
 
   INSTAGRAM_URL: "https://www.instagram.com/intercoolclimatizacaohvac/",
   FACEBOOK_URL: "",
@@ -48,7 +48,7 @@ export const SITE = {
 
   /** Destaques exibidos no topo quando não há números em STATS */
   HIGHLIGHTS: [
-    { value: "Todo SP", label: "Capital, interior e litoral" },
+    { value: "SP e RMSP", label: "Capital e região metropolitana" },
     { value: "R-410A", label: "e R-32 (gases ecológicos)" },
     { value: "Seg–Sex", label: "8h25 às 17h30" },
   ],

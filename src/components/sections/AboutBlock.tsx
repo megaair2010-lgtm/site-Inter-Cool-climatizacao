@@ -9,7 +9,7 @@ export function AboutBlock({ full }: { full?: boolean }) {
     { k: "Visão", v: "Ser referência em climatização no estado de São Paulo pela confiança, pela qualidade técnica e pelo atendimento." },
     { k: "Valores", v: "Segurança em primeiro lugar, transparência, pontualidade, responsabilidade ambiental e respeito ao cliente." },
     { k: "O que fazemos", v: "Instalação, manutenção preventiva e corretiva, higienização, PMOC, VRF/VRV, chillers, fancoils, Self Contained e projetos HVAC." },
-    { k: "Onde atendemos", v: `Atendimento em ${SITE.COMPANY_REGION}: capital, Grande São Paulo, interior e litoral. ${SITE.BUSINESS_HOURS}.` },
+    { k: "Onde atendemos", v: `Atendimento em ${SITE.COMPANY_REGION}. Outras cidades sob consulta, conforme o projeto. ${SITE.BUSINESS_HOURS}.` },
   ];
   return (
     <Section id="sobre" tone={full ? "white" : "mist"}>

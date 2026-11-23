@@ -5,7 +5,7 @@ import type { IconName } from "../../types";
 /** Faixa de especialidades e fatos verificáveis (somente dados confirmados em src/config/site.ts) */
 export function FactsBar() {
   const facts: { icon: IconName; k: string; v: string }[] = [
-    { icon: "pin", k: "Área de atendimento", v: "Todo o estado de São Paulo" },
+    { icon: "pin", k: "Área de atendimento", v: "São Paulo e região metropolitana" },
     { icon: "vrf", k: "Sistemas", v: "Split a VRF, chiller e Self Contained" },
     { icon: "snow", k: "Fluidos refrigerantes", v: "R-410A e R-32" },
     { icon: "clock", k: "Atendimento", v: "Seg a sex, 8h25 às 17h30" },

@@ -9,7 +9,7 @@ export function ServiceArea() {
     <Section id="atendimento">
       <div className="grid items-center gap-12 lg:grid-cols-2">
         <div>
-          <SectionHead eyebrow="Área de atendimento" title={<>Atendemos {SITE.COMPANY_REGION}</>} subtitle="Da capital ao interior e litoral: equipe técnica para instalação, manutenção e contratos em todo o estado." />
+          <SectionHead eyebrow="Área de atendimento" title={<>Atendemos {SITE.COMPANY_REGION}</>} subtitle="Capital e região metropolitana: equipe técnica para instalação, manutenção e contratos. Obras em outras cidades são avaliadas conforme o projeto." />
           {SITE.SERVICE_AREAS.length ? (
             <ul className="-mt-6 flex flex-wrap gap-2">
               {SITE.SERVICE_AREAS.map((c) => (
