@@ -9,6 +9,7 @@ export const NAV = [
   { to: "/", label: "Início" },
   { to: "/servicos", label: "Serviços" },
   { to: "/solucoes", label: "Soluções" },
+  { to: "/obras", label: "Obras" },
   { to: "/projetos", label: "Projetos" },
   { to: "/sobre", label: "Sobre nós" },
   { to: "/#atendimento", label: "Atendimento" },
@@ -59,7 +60,6 @@ export function Header() {
               {n.label}
             </Link>
           ))}
-          <a href="/obras/" className={cx("rounded-lg px-3 py-2 text-sm font-medium transition-colors", over ? "text-white/75 hover:text-white" : "text-slate-600 hover:text-graphite")}>Obras e empresas</a>
         </nav>
         <div className="flex items-center gap-2">
           {hasWhatsApp() && (
@@ -84,10 +84,6 @@ export function Header() {
                 <Icon name="chevron" className="h-4 w-4 text-slate-400" />
               </Link>
             ))}
-            <a href="/obras/" className="flex items-center justify-between border-b border-slate-100 py-4 text-base font-medium text-graphite">
-              Obras e empresas
-              <Icon name="chevron" className="h-4 w-4 text-slate-400" />
-            </a>
           </nav>
           <div className="mt-5 grid gap-3 pb-4">
             <Button to="/orcamento" size="lg">Solicitar orçamento</Button>
@@ -157,7 +153,7 @@ export function Footer() {
           {[["/", "Início"], ["/servicos", "Serviços"], ["/solucoes", "Soluções"], ["/projetos", "Projetos"], ["/sobre", "Sobre nós"], ["/contato", "Contato"], ["/politica-de-privacidade", "Política de Privacidade"]].map(([to, l]) => (
             <Link key={to} to={to} className="transition hover:text-white">{l}</Link>
           ))}
-          <a href="/obras/" className="transition hover:text-white">Para construtoras e arquitetos</a>
+          <Link to="/obras" className="transition hover:text-white">Para construtoras e arquitetos</Link>
         </FootCol>
         <FootCol title="Serviços">
           {[["/servicos/instalacao", "Instalação"], ["/servicos/manutencao", "Manutenção"], ["/servicos/higienizacao", "Higienização"], ["/servicos/pmoc", "PMOC"], ["/servicos/vrf", "VRF / VRV"], ["/servicos/chiller", "Chillers e Fancoils"], ["/servicos/projetos", "Projetos HVAC"]].map(([to, l]) => (
