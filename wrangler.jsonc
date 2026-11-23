@@ -1,0 +1,14 @@
+{
+  // Configuração do Cloudflare Workers (Workers Builds). O site é estático:
+  // o build do Vite gera a pasta dist, servida como assets.
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "site-inter-cool-climatizacao",
+  "compatibility_date": "2026-11-01",
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "single-page-application",
+    "html_handling": "auto-trailing-slash"
+  },
+  // Necessário para as prévias de pull request (npx wrangler preview).
+  "previews": {}
+}

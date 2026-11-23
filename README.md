@@ -41,7 +41,7 @@ src/
   hooks/ lib/             ← SEO por página, animações, roteador, analytics
 api/leads.ts              ← endpoint do servidor (validação, anti-spam, e-mail)
 database/schema.sql       ← tabelas do painel (leads com status, clientes, conteúdo, configurações)
-public/                   ← favicon, robots.txt, sitemap.xml, _redirects, images/
+public/                   ← favicon, robots.txt, sitemap.xml, images/
 ```
 
 ## Páginas
@@ -96,5 +96,6 @@ Se o envio falhar, o visitante vê o botão do WhatsApp como alternativa.
 ## Publicação
 
 - **Vercel**: importe o projeto; `vercel.json` já cuida das rotas e de `api/leads.ts`.
-- **Netlify**: `public/_redirects` cuida das rotas; mova `api/leads.ts` para `netlify/functions`.
+- **Netlify**: crie `public/_redirects` com `/*    /index.html   200` e mova `api/leads.ts` para `netlify/functions`.
+- **Cloudflare Workers**: `wrangler.jsonc` serve a pasta `dist` com fallback de SPA (não use `_redirects` lá).
 - Analytics: preencha `VITE_GA_ID` e `VITE_GSC_VERIFICATION`.
