@@ -5,11 +5,7 @@
   "outputDirectory": "dist",
   "rewrites": [
     {
-      "source": "/obras",
-      "destination": "/obras/index.html"
-    },
-    {
-      "source": "/((?!api/|assets/|images/|obras/|midia/|video/|favicon.svg|favicon.png|logo-intercool|robots.txt|sitemap.xml).*)",
+      "source": "/((?!api/|assets/|images/|midia/|video/|favicon.svg|favicon.png|logo-intercool|robots.txt|sitemap.xml).*)",
       "destination": "/index.html"
     }
   ],

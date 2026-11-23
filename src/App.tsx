@@ -7,6 +7,7 @@ import { ServicesPage } from "./pages/ServicesPage";
 import { ServiceDetailPage } from "./pages/ServiceDetailPage";
 import { SolutionsPage } from "./pages/SolutionsPage";
 import { ProjectsPage } from "./pages/ProjectsPage";
+import { ObrasPage } from "./pages/ObrasPage";
 import { AboutPage } from "./pages/AboutPage";
 import { FaqPage } from "./pages/FaqPage";
 import { ContactPage } from "./pages/ContactPage";
@@ -26,6 +27,7 @@ function Routes() {
     case "/servicos": return <ServicesPage />;
     case "/solucoes": return <SolutionsPage />;
     case "/projetos": return <ProjectsPage />;
+    case "/obras": return <ObrasPage />;
     case "/sobre": return <AboutPage />;
     case "/faq": return <FaqPage />;
     case "/contato": return <ContactPage />;

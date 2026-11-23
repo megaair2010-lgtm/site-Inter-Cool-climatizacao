@@ -3,7 +3,7 @@
 Tudo o que foi montado para levar a Inter-Cool ao top 10 de climatização em São Paulo, integrado ao site.
 
 ## No site
-- **/obras/**: landing page de captação para construtoras, arquitetos, engenharia/fit-out e condomínios. Formulário em 2 passos que abre o WhatsApp (11) 97799-0182 com o pedido preenchido, ou o e-mail com assunto `[Obra] Pedido de orçamento - <empresa>`. Linkada no menu e no rodapé.
+- **/obras**: página interna do site (src/pages/ObrasPage.tsx), com o mesmo cabeçalho, rodapé e componentes, voltada a construtoras, incorporadoras, engenharias, arquitetos e obras comerciais/industriais. Usa o formulário de orçamento padrão do site (QuoteForm). Está no menu principal e no rodapé.
 - **/midia/**: Reels (`reel1-construtoras.mp4`, `reel2-pmoc.mp4`, `reel3-arquitetos.mp4`) e Stories (`story-1..3.jpg`) 1080x1920, prontos para o Instagram, com URL pública para o agente de redes sociais.
 - **office/**: Escritório 3D da Inter-Cool AI Company (visualizador dos agentes).
 

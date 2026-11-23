@@ -34,9 +34,9 @@ const inputCls = (err?: string) =>
   cx("w-full rounded-xl border bg-white px-4 py-3 text-base text-graphite placeholder:text-slate-400 transition focus:outline-none focus:ring-4",
     err ? "border-red-400 focus:ring-red-100" : "border-slate-300 focus:border-brand focus:ring-brand/15");
 
-export function QuoteForm({ compactHead }: { compactHead?: boolean }) {
+export function QuoteForm({ compactHead, initialClientType, initialService }: { compactHead?: boolean; initialClientType?: ClientType; initialService?: ServiceRequested }) {
   const { query } = useRouter();
-  const [v, setV] = useState<LeadInput>(EMPTY);
+  const [v, setV] = useState<LeadInput>(() => ({ ...EMPTY, clientType: initialClientType ?? EMPTY.clientType, service: initialService ?? EMPTY.service }));
   const [errors, setErrors] = useState<FieldErrors>({});
   const [state, setState] = useState<"idle" | "sending" | "done" | "fallback">("idle");
   const [consent, setConsent] = useState(false);
