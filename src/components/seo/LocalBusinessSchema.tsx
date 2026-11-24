@@ -16,7 +16,7 @@ export function LocalBusinessSchema() {
     legalName: SITE.COMPANY_LEGAL_NAME,
     taxID: SITE.COMPANY_DOCUMENT,
     image: SITE.SITE_URL.replace(/\/$/, "") + "/images/hero.webp",
-    logo: SITE.SITE_URL.replace(/\/$/, "") + "/logo-intercool.svg",
+    logo: SITE.SITE_URL.replace(/\/$/, "") + "/logo-intercool.png",
     openingHours: "Mo-Fr 08:25-17:30",
     areaServed: SITE.SERVICE_AREAS.length ? SITE.SERVICE_AREAS : SITE.COMPANY_REGION,
     sameAs: [SITE.INSTAGRAM_URL, SITE.FACEBOOK_URL, SITE.LINKEDIN_URL].filter(Boolean),
